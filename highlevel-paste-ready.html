@@ -13,6 +13,7 @@
     REPLACE: WEBINAR TITLE        (headline in the hero, plus 2 other mentions)
     REPLACE: HERO PHOTO URL       (HighLevel only: upload images/cherie-bowen-hero.jpg)
     REPLACE: ABOUT PHOTO URL      (HighLevel only: upload images/cherie-bowen-about.jpg)
+    REPLACE: TESTIMONIAL IMAGE URLS (HighLevel only: upload images/testimonial-1..4.webp)
     REPLACE: PRIVACY POLICY URL   (2 links)
     REPLACE: TERMS URL            (2 links)
     REPLACE: SMS DISCLOSURES      (final wording for both text consents)
@@ -398,26 +399,19 @@
   }
   #rie-webinar .rw-ig { font-weight: 500; }
 
-  /* ---------- Testimonials (only used once real ones are provided) ---------- */
-  #rie-webinar .rw-quotes { display: grid; gap: 18px; }
-  #rie-webinar .rw-quote {
-    padding: 28px 26px;
-    background: var(--rw-surface);
-    border: 1px solid var(--rw-line);
-    border-radius: 20px;
+  /* ---------- Testimonials (message screenshots) ---------- */
+  #rie-webinar .rw-proof { columns: 1; column-gap: 20px; }
+  #rie-webinar .rw-proof__item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    display: block;
+    margin: 0 0 20px;
+    padding: 12px;
+    background: #111111;
+    border-radius: 22px;
+    box-shadow: 0 22px 44px -30px rgba(42, 32, 27, 0.6);
   }
-  #rie-webinar .rw-quote { position: relative; padding-top: 52px; }
-  #rie-webinar .rw-quote::before {
-    content: "\201C";
-    position: absolute;
-    top: 6px; left: 24px;
-    font-family: var(--rw-serif);
-    font-size: 72px;
-    line-height: 1;
-    color: var(--rw-accent);
-  }
-  #rie-webinar .rw-quote p { font-family: var(--rw-serif); font-size: 22px; line-height: 1.45; color: var(--rw-ink); }
-  #rie-webinar .rw-quote footer { margin-top: 16px; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: var(--rw-accent-text); }
+  #rie-webinar .rw-proof__item img { width: 100%; height: auto; border-radius: 14px; }
 
   /* ---------- Registration ---------- */
   #rie-webinar #rw-register { scroll-margin-top: 16px; }
@@ -615,7 +609,7 @@
     #rie-webinar .rw-about { grid-template-columns: 0.85fr 1.15fr; gap: 72px; }
     #rie-webinar .rw-register { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
     #rie-webinar .rw-register__intro { position: sticky; top: 32px; }
-    #rie-webinar .rw-quotes { grid-template-columns: repeat(3, 1fr); align-items: start; }
+    #rie-webinar .rw-proof { columns: 2; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -816,30 +810,35 @@
   </section>
 
   <!-- ======================= TESTIMONIALS =======================
-       Word-for-word excerpts from messages mentees sent Cherie ("…" marks
-       skipped text). First names only. Confirm each person is happy to be
-       quoted before launch. Add more by copying a <blockquote> block.
+       Screenshots of real messages from mentees, cropped so no names show.
+       Each alt text is a word-for-word transcription for screen readers.
+       REPLACE: TESTIMONIAL IMAGE URLS. In HighLevel, upload images/testimonial-1.webp
+       through testimonial-4.webp to Media Storage and replace each src with its URL.
   -->
   <section class="rw-section rw-section--alt" aria-labelledby="rw-quotes-title">
     <div class="rw-wrap">
       <div class="rw-section-head">
         <p class="rw-kicker">Kind words</p>
         <h2 id="rw-quotes-title" class="rw-h2">What my <em>mentees</em> say</h2>
-        <p class="rw-lead">Messages from beauty professionals I have mentored.</p>
+        <p class="rw-lead">Real messages from beauty professionals I have mentored. Names are hidden for their privacy.</p>
       </div>
-      <div class="rw-quotes">
-        <blockquote class="rw-quote">
-          <p>One of the biggest shifts for me was realizing that I don’t need to add more in order to grow. Sometimes growth comes from simplifying, refining what I already have, and being intentional about what I want my business to be known for. … Overall, I feel like I came out of this mentorship with more clarity, confidence, and direction.</p>
-          <footer>Chrissy, mentee</footer>
-        </blockquote>
-        <blockquote class="rw-quote">
-          <p>Your wisdom and guidance have completely transformed the way I structure my business. … Your program gave me the clarity, systems, and direction I needed to grow.</p>
-          <footer>Kimmy, mentee</footer>
-        </blockquote>
-        <blockquote class="rw-quote">
-          <p>You challenged me to look at things differently, get out of my own head, and actually take action instead of continuing to overthink.</p>
-          <footer>Chrissy, mentee</footer>
-        </blockquote>
+      <div class="rw-proof">
+        <figure class="rw-proof__item">
+          <img src="images/testimonial-1.webp" width="648" height="1362" loading="lazy"
+               alt="Text message from a mentee: Thank you so much for your mentorship! It truly provided me with so much clarity and pushed me to execute on things that needed to get done to position myself and my business on the path toward its purpose and goals. One of the biggest shifts for me was realizing that I don’t need to add more in order to grow. Sometimes growth comes from simplifying, refining what I already have, and being intentional about what I want my business to be known for. Niching down and learning how to better utilize the tools and resources I already have has helped me see how much more smoothly and efficiently I can run my business. I also really appreciate the balance you bring as a mentor. You’re a great listener, but you’re also going to tell me things straight forward. There’s no beating around the bush in this mentorship! And honestly, I needed that. You challenged me to look at things differently, get out of my own head, and actually take action instead of continuing to overthink.">
+        </figure>
+        <figure class="rw-proof__item">
+          <img src="images/testimonial-4.webp" width="900" height="270" loading="lazy"
+               alt="Text message: If girls knew how booked and busy you was, they’d be running to pay you for mentorship">
+        </figure>
+        <figure class="rw-proof__item">
+          <img src="images/testimonial-2.webp" width="662" height="874" loading="lazy"
+               alt="Text message from a mentee: Good morning Cherie, I just wanted to say thank you for being such an incredible mentor. Your wisdom and guidance have completely transformed the way I structure my business. The foundation you’ve helped me build is beyond what I could have imagined, and I feel so much more confident about the future. Your program gave me the clarity, systems, and direction I needed to grow. I’m truly grateful for everything you’ve poured into me you’ve made a lasting impact, and I can’t thank you enough.">
+        </figure>
+        <figure class="rw-proof__item">
+          <img src="images/testimonial-3.webp" width="660" height="880" loading="lazy"
+               alt="Text message from a mentee: Overall, I feel like I came out of this mentorship with more clarity, confidence, and direction. I’m not just looking at my business as something I’m operating day to day. I’m thinking more intentionally about the bigger picture, how I want to position myself, and how I can build a business that is aligned with where I’m ultimately trying to go. I’m genuinely grateful for your guidance, honesty, and the way you pushed me throughout this mentorship. I know there are things I would have continued to overthink or put off if I didn’t have you challenging me to just make the decision and execute. Thank you for helping me.">
+        </figure>
       </div>
     </div>
   </section>
