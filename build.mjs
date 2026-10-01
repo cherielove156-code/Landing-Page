@@ -26,12 +26,12 @@ const page = `<!doctype html>
 
   <!-- REPLACE: WEBINAR TITLE (browser tab and link previews) -->
   <title>Free Live Training for Beauty Professionals | Rie Artistry</title>
-  <meta name="description" content="You’re good at what you do. Now let’s build the business around it. A free live training with Cherie Simmons of Rie Artistry, Sunday, October 18, 2026 at 7 PM Eastern.">
+  <meta name="description" content="You’re good at what you do. Now let’s build the business around it. A free live training with Cherie Bowen of Rie Artistry, Sunday, October 18, 2026 at 7 PM Eastern.">
 
   <!-- Link preview when the page is shared in Instagram DMs and other apps. -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="You’re good at what you do. Now let’s build the business around it.">
-  <meta property="og:description" content="Sunday, October 18, 2026 at 7 PM Eastern. Hosted by Cherie Simmons of Rie Artistry.">
+  <meta property="og:description" content="Sunday, October 18, 2026 at 7 PM Eastern. Hosted by Cherie Bowen of Rie Artistry.">
   <!-- REPLACE: SHARE IMAGE URL (1200 x 630 works best), then uncomment. -->
   <!-- <meta property="og:image" content="https://YOUR-IMAGE-URL.jpg"> -->
 

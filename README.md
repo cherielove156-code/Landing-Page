@@ -1,6 +1,6 @@
 # Rie Artistry · Free Live Training Landing Page
 
-Landing page and custom registration form for Cherie Simmons' free live training for beauty professionals: **Sunday, October 18, 2026 at 7 PM Eastern**.
+Landing page and custom registration form for Cherie Bowen' free live training for beauty professionals: **Sunday, October 18, 2026 at 7 PM Eastern**.
 
 Plain HTML and CSS with a small amount of JavaScript. No libraries, no build tools required to use it.
 
