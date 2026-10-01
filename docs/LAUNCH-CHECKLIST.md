@@ -5,7 +5,7 @@ Run this with the page in **preview mode** on an unshared URL. Use your own emai
 ## 1. Page and placeholders
 
 - [ ] Final webinar title replaces the working headline (hero, registration intro, page title / SEO title).
-- [ ] Both photos are real images with descriptive `alt` text, and nothing still says "REPLACE".
+- [ ] Both photos load on the live page (in HighLevel, their `src` points to your Media Storage URLs, not `images/...`).
 - [ ] Privacy Policy and Terms links open the correct pages, both under the form and in the footer.
 - [ ] Date and time read **Sunday, October 18, 2026 · 7 PM Eastern** everywhere.
 - [ ] Testimonials section is either still commented out or contains only real, approved quotes.
