@@ -24,8 +24,7 @@ const page = `<!doctype html>
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#FBF7F1">
 
-  <!-- REPLACE: WEBINAR TITLE (browser tab and link previews) -->
-  <title>Free Live Training for Beauty Professionals | Rie Artistry</title>
+  <title>You’re Good at What You Do. Now Let’s Build the Business Around It. | Rie Artistry</title>
   <meta name="description" content="You’re good at what you do. Now let’s build the business around it. A free live training with Cherie Bowen of Rie Artistry, Sunday, October 18, 2026 at 7 PM Eastern.">
 
   <!-- Link preview when the page is shared in Instagram DMs and other apps. -->

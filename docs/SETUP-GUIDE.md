@@ -19,7 +19,7 @@ Search `highlevel-paste-ready.html` for `REPLACE:`. Then run `node build.mjs` so
 
 | Placeholder | Where | Notes |
 |---|---|---|
-| `REPLACE: WEBINAR TITLE` | Hero `<h1>`, registration intro, `<title>` in `build.mjs` | The current headline is your opening message, "You’re good at what you do. Now let’s build the business around it." If your final title differs, put it in the hero `<h1>` or above it. The `<em>` tag sets the italic accent words. |
+| Webinar title (done) | Hero `<h1>`, `<title>` in `build.mjs` | Confirmed: "You’re good at what you do. Now let’s build the business around it." In HighLevel, use it as the page title in the page SEO settings too. |
 | `REPLACE: HERO PHOTO URL` | Hero `<img src="...">` | Already set to `images/cherie-bowen-hero.jpg`, which works in `preview.html`. **In HighLevel**, upload that file to Media Storage and paste its URL into `src`. |
 | `REPLACE: ABOUT PHOTO URL` | About `<img src="...">` | Already set to `images/cherie-bowen-about.jpg`. **In HighLevel**, upload it and paste its URL the same way. |
 | `REPLACE: PRIVACY POLICY URL` | Two `href="#REPLACE-PRIVACY-POLICY-URL"` links | One under the form, one in the footer. |
