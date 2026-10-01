@@ -8,7 +8,7 @@ Run this with the page in **preview mode** on an unshared URL. Use your own emai
 - [ ] Both photos load on the live page (in HighLevel, their `src` points to your Media Storage URLs, not `images/...`).
 - [ ] Privacy Policy and Terms links open the correct pages, both under the form and in the footer.
 - [ ] Date and time read **Sunday, October 18, 2026 · 7 PM Eastern** everywhere.
-- [ ] Testimonials section is either still commented out or contains only real, approved quotes.
+- [ ] Chrissy and Kimmy have said yes to being quoted by first name, and every quote still matches their original messages.
 - [ ] Page title, description, and share image are set (HighLevel page SEO settings, or `<head>` in `preview.html`).
 - [ ] Looks right and has no sideways scrolling in: **Instagram in-app browser on iPhone**, **Instagram in-app browser on Android**, Safari, Chrome. (Test by sending the link to yourself in an Instagram DM and opening it there.)
 - [ ] Every "Save My Free Spot" button scrolls to the form.

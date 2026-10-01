@@ -453,8 +453,18 @@
     border: 1px solid var(--rw-line);
     border-radius: 20px;
   }
-  #rie-webinar .rw-quote p { font-family: var(--rw-serif); font-size: 23px; line-height: 1.4; color: var(--rw-ink); }
-  #rie-webinar .rw-quote footer { margin-top: 16px; font-size: 15px; color: var(--rw-ink-soft); }
+  #rie-webinar .rw-quote { position: relative; padding-top: 52px; }
+  #rie-webinar .rw-quote::before {
+    content: "\201C";
+    position: absolute;
+    top: 6px; left: 24px;
+    font-family: var(--rw-serif);
+    font-size: 72px;
+    line-height: 1;
+    color: var(--rw-accent);
+  }
+  #rie-webinar .rw-quote p { font-family: var(--rw-serif); font-size: 22px; line-height: 1.45; color: var(--rw-ink); }
+  #rie-webinar .rw-quote footer { margin-top: 16px; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: var(--rw-accent-text); }
 
   /* ---------- Registration ---------- */
   #rie-webinar #rw-register { scroll-margin-top: 16px; }
@@ -652,7 +662,7 @@
     #rie-webinar .rw-about { grid-template-columns: 0.85fr 1.15fr; gap: 72px; }
     #rie-webinar .rw-register { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
     #rie-webinar .rw-register__intro { position: sticky; top: 32px; }
-    #rie-webinar .rw-quotes { grid-template-columns: repeat(2, 1fr); }
+    #rie-webinar .rw-quotes { grid-template-columns: repeat(3, 1fr); align-items: start; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -852,32 +862,37 @@
     </div>
   </section>
 
-  <!-- ======================= TESTIMONIALS (OFF) =======================
-       Add only real testimonials you have permission to share, then remove
-       the comment markers around this section. Do not add placeholder quotes.
-
-  <section class="rw-section" aria-labelledby="rw-quotes-title">
+  <!-- ======================= TESTIMONIALS =======================
+       Word-for-word excerpts from messages mentees sent Cherie ("…" marks
+       skipped text). First names only. Confirm each person is happy to be
+       quoted before launch. Add more by copying a <blockquote> block.
+  -->
+  <section class="rw-section rw-section--alt" aria-labelledby="rw-quotes-title">
     <div class="rw-wrap">
       <div class="rw-section-head">
         <p class="rw-kicker">Kind words</p>
-        <h2 id="rw-quotes-title" class="rw-h2">From beauty professionals I have worked with</h2>
+        <h2 id="rw-quotes-title" class="rw-h2">What my <em>mentees</em> say</h2>
+        <p class="rw-lead">Messages from beauty professionals I have mentored.</p>
       </div>
       <div class="rw-quotes">
         <blockquote class="rw-quote">
-          <p>Paste the exact testimonial text here.</p>
-          <footer>First name, profession, city</footer>
+          <p>One of the biggest shifts for me was realizing that I don’t need to add more in order to grow. Sometimes growth comes from simplifying, refining what I already have, and being intentional about what I want my business to be known for. … Overall, I feel like I came out of this mentorship with more clarity, confidence, and direction.</p>
+          <footer>Chrissy, mentee</footer>
         </blockquote>
         <blockquote class="rw-quote">
-          <p>Paste the exact testimonial text here.</p>
-          <footer>First name, profession, city</footer>
+          <p>Your wisdom and guidance have completely transformed the way I structure my business. … Your program gave me the clarity, systems, and direction I needed to grow.</p>
+          <footer>Kimmy, mentee</footer>
+        </blockquote>
+        <blockquote class="rw-quote">
+          <p>You challenged me to look at things differently, get out of my own head, and actually take action instead of continuing to overthink.</p>
+          <footer>Chrissy, mentee</footer>
         </blockquote>
       </div>
     </div>
   </section>
-  ==================================================================== -->
 
   <!-- ======================= REGISTRATION ======================= -->
-  <section class="rw-section rw-section--alt" id="rw-register" aria-labelledby="rw-register-title">
+  <section class="rw-section" id="rw-register" aria-labelledby="rw-register-title">
     <div class="rw-wrap rw-register">
       <div class="rw-register__intro">
         <p class="rw-kicker">Free live training</p>
@@ -1018,7 +1033,7 @@
   </section>
 
   <!-- ======================= FAQ ======================= -->
-  <section class="rw-section" aria-labelledby="rw-faq-title">
+  <section class="rw-section rw-section--alt" aria-labelledby="rw-faq-title">
     <div class="rw-wrap">
       <div class="rw-section-head">
         <p class="rw-kicker">Questions</p>

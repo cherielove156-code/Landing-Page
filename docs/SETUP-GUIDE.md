@@ -26,7 +26,7 @@ Search `highlevel-paste-ready.html` for `REPLACE:`. Then run `node build.mjs` so
 | `REPLACE: TERMS URL` | Two `href="#REPLACE-TERMS-URL"` links | Same places. |
 | `REPLACE: SMS DISCLOSURES` | The two text-message consent paragraphs | Draft wording only. Have it reviewed, and make sure it matches your A2P 10DLC campaign registration. |
 | `REPLACE: THANK-YOU PAGE URL` | `data-thank-you-url=""` on `#rie-webinar` | Optional. Used only in live mode. |
-| Testimonials | Commented-out section after "About" | Add only real testimonials you have permission to use, then remove the comment markers. |
+| Testimonials | "What my mentees say" section after "About" | Word-for-word excerpts from Chrissy and Kimmy. Confirm both are happy to be quoted. Add more by copying a `<blockquote>` block. |
 | Footer disclosure | Last footer paragraph | A suggested results disclaimer. Edit or remove it to match your own legal guidance. |
 
 **Photos in HighLevel:** upload them to **Media Storage**, copy each file's URL, and paste it into `src`.
