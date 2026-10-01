@@ -1,0 +1,1180 @@
+<!--
+  =====================================================================
+  RIE ARTISTRY · FREE LIVE TRAINING · LANDING PAGE + REGISTRATION FORM
+  Paste-ready version for a HighLevel "Custom JS/HTML" (Code) element.
+  =====================================================================
+
+  This file is the single source of truth. preview.html is generated from
+  it by running:  node build.mjs
+
+  EVERYTHING YOU NEED TO REPLACE IS MARKED WITH "REPLACE:"
+  Search this file for REPLACE: to find each spot.
+
+    REPLACE: WEBINAR TITLE        (headline in the hero, plus 2 other mentions)
+    REPLACE: HERO PHOTO           (image URL + alt text)
+    REPLACE: ABOUT PHOTO          (image URL + alt text)
+    REPLACE: PRIVACY POLICY URL   (2 links)
+    REPLACE: TERMS URL            (2 links)
+    REPLACE: SMS DISCLOSURES      (final wording for both text consents)
+    REPLACE: THANK-YOU PAGE URL   (data-thank-you-url, optional)
+    GO LIVE SWITCH                (data-mode="preview" -> data-mode="live")
+
+  HIGHLEVEL EXTERNAL TRACKING SCRIPT
+  Do NOT paste it inside this element. Put it in the page or funnel
+  "Tracking Code > Head" setting so it loads once, before this form.
+  See docs/SETUP-GUIDE.md.
+
+  All CSS below is scoped to #rie-webinar, so it will not restyle the
+  rest of your HighLevel page.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+
+<style>
+  /* ---------- Scope + design tokens ---------- */
+  #rie-webinar {
+    --rw-bg: #FBF7F1;
+    --rw-bg-alt: #F4EBE1;
+    --rw-surface: #FFFDFA;
+    --rw-ink: #2A201B;
+    --rw-ink-soft: #5A4A42;
+    --rw-line: #E4D6C7;
+    --rw-field-line: #947B69;
+    --rw-accent: #7B4A3A;
+    --rw-accent-hover: #633A2D;
+    --rw-accent-ink: #FFF9F4;
+    --rw-gold: #B9946F;
+    --rw-pill-bg: #F1E3D6;
+    --rw-pill-ink: #6B4133;
+    --rw-error: #A2282C;
+    --rw-dark: #2A201B;
+    --rw-dark-ink: #F7EEE5;
+    --rw-serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+    --rw-sans: "Jost", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    color-scheme: light;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--rw-bg);
+    color: var(--rw-ink);
+    font-family: var(--rw-sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: normal;
+    text-align: left;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+  #rie-webinar *,
+  #rie-webinar *::before,
+  #rie-webinar *::after { box-sizing: border-box; }
+
+  #rie-webinar h1, #rie-webinar h2, #rie-webinar h3,
+  #rie-webinar p, #rie-webinar ul, #rie-webinar ol,
+  #rie-webinar figure, #rie-webinar fieldset, #rie-webinar legend,
+  #rie-webinar blockquote, #rie-webinar dl, #rie-webinar dd {
+    margin: 0; padding: 0; border: 0;
+  }
+  #rie-webinar ul, #rie-webinar ol { list-style: none; }
+  #rie-webinar img { display: block; max-width: 100%; height: auto; border: 0; }
+  #rie-webinar a { color: var(--rw-accent); text-decoration: underline; text-underline-offset: 3px; }
+  #rie-webinar a:hover { color: var(--rw-accent-hover); }
+  #rie-webinar [hidden] { display: none !important; }
+
+  #rie-webinar a:focus-visible,
+  #rie-webinar button:focus-visible,
+  #rie-webinar summary:focus-visible {
+    outline: 3px solid var(--rw-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  #rie-webinar .rw-wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  #rie-webinar .rw-section { padding: 72px 0; }
+  #rie-webinar .rw-section--alt { background: var(--rw-bg-alt); }
+
+  /* ---------- Type ---------- */
+  #rie-webinar .rw-h1,
+  #rie-webinar .rw-h2,
+  #rie-webinar .rw-h3 {
+    font-family: var(--rw-serif);
+    font-weight: 600;
+    color: var(--rw-ink);
+    letter-spacing: -0.01em;
+    text-transform: none;
+    text-wrap: balance;
+  }
+  #rie-webinar .rw-h1 { font-size: clamp(40px, 10.5vw, 68px); line-height: 1.04; }
+  #rie-webinar .rw-h2 { font-size: clamp(34px, 7.6vw, 50px); line-height: 1.1; }
+  #rie-webinar .rw-h3 { font-size: 27px; line-height: 1.2; }
+  #rie-webinar .rw-h1 em,
+  #rie-webinar .rw-h2 em { font-style: italic; font-weight: 500; color: var(--rw-accent); }
+
+  #rie-webinar .rw-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rw-pill-ink);
+    margin-bottom: 14px;
+  }
+  #rie-webinar .rw-lead { font-size: 19px; line-height: 1.6; color: var(--rw-ink-soft); }
+  #rie-webinar .rw-body { color: var(--rw-ink-soft); }
+  #rie-webinar .rw-body + .rw-body { margin-top: 16px; }
+  #rie-webinar .rw-section-head { max-width: 680px; margin-bottom: 40px; }
+  #rie-webinar .rw-section-head .rw-lead { margin-top: 16px; }
+  #rie-webinar .rw-rule {
+    width: 56px; height: 1px; background: var(--rw-gold); border: 0; margin: 0 0 18px;
+  }
+
+  /* ---------- Buttons ---------- */
+  #rie-webinar .rw-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 16px 34px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--rw-accent);
+    color: var(--rw-accent-ink);
+    font-family: var(--rw-sans);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    box-shadow: 0 10px 24px -14px rgba(74, 40, 29, 0.7);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #rie-webinar .rw-btn:hover { background: var(--rw-accent-hover); color: var(--rw-accent-ink); }
+  #rie-webinar .rw-btn:active { transform: translateY(1px); }
+  #rie-webinar .rw-btn[disabled] { opacity: 0.7; cursor: progress; }
+  #rie-webinar .rw-btn--block { display: flex; width: 100%; }
+  #rie-webinar .rw-btn--light { background: var(--rw-dark-ink); color: var(--rw-dark); box-shadow: none; }
+  #rie-webinar .rw-btn--light:hover { background: #FFFFFF; color: var(--rw-dark); }
+  #rie-webinar .rw-btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* ---------- Preview bar (removed automatically in live mode) ---------- */
+  #rie-webinar .rw-preview-bar {
+    background: repeating-linear-gradient(-45deg, #FCE8B2, #FCE8B2 14px, #F9DD94 14px, #F9DD94 28px);
+    color: #3D2C00;
+    font-size: 15px;
+    line-height: 1.45;
+    text-align: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #E2C46F;
+  }
+  #rie-webinar .rw-preview-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px dashed #C9A84A;
+    border-radius: 12px;
+    background: #FFF6DC;
+    color: #3D2C00;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ---------- Top bar ---------- */
+  #rie-webinar .rw-topbar { border-bottom: 1px solid var(--rw-line); background: var(--rw-bg); }
+  #rie-webinar .rw-topbar__inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    min-height: 64px;
+  }
+  #rie-webinar .rw-wordmark {
+    font-family: var(--rw-serif);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-wordmark small {
+    display: block;
+    font-family: var(--rw-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rw-ink-soft);
+    margin-top: -2px;
+  }
+  #rie-webinar .rw-topbar__link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--rw-accent);
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  #rie-webinar .rw-hero { padding: 28px 0 64px; }
+  #rie-webinar .rw-hero__grid { display: grid; gap: 44px; align-items: center; }
+  #rie-webinar .rw-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--rw-pill-bg);
+    color: var(--rw-pill-ink);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  #rie-webinar .rw-pill__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rw-accent); flex: none; }
+  #rie-webinar .rw-hero .rw-lead { margin-top: 18px; max-width: 560px; font-size: 18px; }
+  #rie-webinar .rw-nowrap { white-space: nowrap; }
+
+  #rie-webinar .rw-when {
+    display: grid;
+    gap: 14px;
+    margin: 28px 0 28px;
+    padding: 20px 22px;
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 18px;
+    max-width: 520px;
+  }
+  #rie-webinar .rw-when__row { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; }
+  #rie-webinar .rw-when__row svg { width: 22px; height: 22px; color: var(--rw-accent); margin-top: 2px; }
+  #rie-webinar .rw-when__main { display: block; font-weight: 500; font-size: 18px; line-height: 1.35; color: var(--rw-ink); }
+  #rie-webinar .rw-when__sub { display: block; font-size: 15px; line-height: 1.45; color: var(--rw-ink-soft); margin-top: 2px; }
+
+  #rie-webinar .rw-hero__cta .rw-btn { width: 100%; }
+  #rie-webinar .rw-micro { margin-top: 14px; font-size: 15px; color: var(--rw-ink-soft); }
+
+  #rie-webinar .rw-hero__media { position: relative; max-width: 440px; width: 100%; margin: 0 auto; padding: 0 14px 14px 0; }
+  #rie-webinar .rw-hero__media::before {
+    content: "";
+    position: absolute;
+    top: 14px; left: 14px; right: 0; bottom: 0;
+    border: 1px solid var(--rw-gold);
+    border-radius: 260px 260px 22px 22px;
+    pointer-events: none;
+  }
+  #rie-webinar .rw-arch {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 260px 260px 22px 22px;
+    background: #EADBCB;
+  }
+  #rie-webinar .rw-hero__badge {
+    position: absolute;
+    left: -6px;
+    bottom: 36px;
+    padding: 12px 16px;
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 14px;
+    box-shadow: 0 14px 30px -18px rgba(42, 32, 27, 0.45);
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-hero__badge strong { display: block; font-family: var(--rw-serif); font-size: 20px; font-weight: 600; }
+
+  /* ---------- Who it's for ---------- */
+  #rie-webinar .rw-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+  #rie-webinar .rw-chips li {
+    padding: 9px 16px;
+    border: 1px solid var(--rw-line);
+    border-radius: 999px;
+    background: var(--rw-surface);
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-fit { display: grid; gap: 14px; }
+  #rie-webinar .rw-fit li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 20px 22px;
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 16px;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-fit svg { width: 24px; height: 24px; color: var(--rw-accent); margin-top: 2px; }
+
+  /* ---------- Outcomes ---------- */
+  #rie-webinar .rw-outcomes { display: grid; gap: 18px; counter-reset: rw-outcome; }
+  #rie-webinar .rw-outcome {
+    position: relative;
+    padding: 30px 26px 30px;
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 20px;
+  }
+  #rie-webinar .rw-outcome__num {
+    display: block;
+    font-family: var(--rw-serif);
+    font-size: 46px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--rw-gold);
+    margin-bottom: 16px;
+  }
+  #rie-webinar .rw-outcome .rw-h3 { margin-bottom: 10px; }
+  #rie-webinar .rw-outcome p { color: var(--rw-ink-soft); }
+  #rie-webinar .rw-practical {
+    margin-top: 32px;
+    display: grid;
+    gap: 22px;
+    align-items: center;
+    padding: 26px;
+    border-radius: 20px;
+    border: 1px solid var(--rw-line);
+    background: var(--rw-bg-alt);
+  }
+  #rie-webinar .rw-practical p { color: var(--rw-ink); font-size: 18px; }
+
+  /* ---------- About ---------- */
+  #rie-webinar .rw-about { display: grid; gap: 40px; align-items: center; }
+  #rie-webinar .rw-about__photo {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 22px;
+    background: #EADBCB;
+  }
+  #rie-webinar .rw-about .rw-h2 { margin-bottom: 20px; }
+  #rie-webinar .rw-facts { display: grid; gap: 12px; margin: 26px 0; }
+  #rie-webinar .rw-facts li {
+    padding-left: 22px;
+    position: relative;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-facts li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.72em;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--rw-gold);
+  }
+  #rie-webinar .rw-ig { font-weight: 500; }
+
+  /* ---------- Testimonials (only used once real ones are provided) ---------- */
+  #rie-webinar .rw-quotes { display: grid; gap: 18px; }
+  #rie-webinar .rw-quote {
+    padding: 28px 26px;
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 20px;
+  }
+  #rie-webinar .rw-quote p { font-family: var(--rw-serif); font-size: 23px; line-height: 1.4; color: var(--rw-ink); }
+  #rie-webinar .rw-quote footer { margin-top: 16px; font-size: 15px; color: var(--rw-ink-soft); }
+
+  /* ---------- Registration ---------- */
+  #rie-webinar #rw-register { scroll-margin-top: 16px; }
+  #rie-webinar .rw-register { display: grid; gap: 36px; align-items: start; }
+  #rie-webinar .rw-register__intro .rw-h2 { margin-bottom: 16px; }
+  #rie-webinar .rw-register__intro .rw-when { margin-bottom: 0; background: var(--rw-surface); }
+
+  #rie-webinar .rw-card {
+    background: var(--rw-surface);
+    border: 1px solid var(--rw-line);
+    border-radius: 24px;
+    padding: 28px 20px;
+    box-shadow: 0 24px 48px -32px rgba(42, 32, 27, 0.35);
+  }
+  #rie-webinar .rw-card__title { font-family: var(--rw-serif); font-size: 30px; font-weight: 600; line-height: 1.15; color: var(--rw-ink); }
+  #rie-webinar .rw-card__sub { margin-top: 6px; font-size: 15px; color: var(--rw-ink-soft); }
+
+  #rie-webinar .rw-form { margin-top: 22px; }
+  #rie-webinar .rw-field { margin-bottom: 20px; }
+  #rie-webinar .rw-label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-hint { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: var(--rw-ink-soft); }
+
+  #rie-webinar .rw-input,
+  #rie-webinar .rw-select {
+    display: block;
+    width: 100%;
+    min-height: 54px;
+    margin: 0;
+    padding: 13px 16px;
+    border: 1.5px solid var(--rw-field-line);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    color: var(--rw-ink);
+    font-family: var(--rw-sans);
+    font-size: 17px; /* 16px+ prevents iOS zoom on focus */
+    line-height: 1.4;
+    box-shadow: none;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  #rie-webinar .rw-select {
+    padding-right: 46px;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%237B4A3A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px 18px;
+    cursor: pointer;
+  }
+  #rie-webinar .rw-select:invalid { color: #6F625B; }
+  #rie-webinar .rw-select option { color: var(--rw-ink); }
+  #rie-webinar .rw-input::placeholder { color: #8A7C74; opacity: 1; }
+  #rie-webinar .rw-input:focus,
+  #rie-webinar .rw-select:focus {
+    border-color: var(--rw-accent);
+    box-shadow: 0 0 0 3px rgba(123, 74, 58, 0.22);
+  }
+  #rie-webinar .rw-input[aria-invalid="true"],
+  #rie-webinar .rw-select[aria-invalid="true"] {
+    border-color: var(--rw-error);
+    box-shadow: 0 0 0 3px rgba(162, 40, 44, 0.14);
+  }
+  #rie-webinar .rw-error {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--rw-error);
+  }
+  #rie-webinar .rw-error:empty { display: none; }
+  #rie-webinar .rw-error::before { content: "! "; font-weight: 600; }
+
+  #rie-webinar .rw-other { padding: 16px; margin-top: -4px; border-left: 3px solid var(--rw-gold); background: var(--rw-bg); border-radius: 0 12px 12px 0; }
+
+  #rie-webinar .rw-consent { margin: 26px 0 0; padding: 22px 0 0; border-top: 1px solid var(--rw-line); }
+  #rie-webinar .rw-consent legend {
+    display: block;
+    width: 100%;
+    float: left; /* lets the legend sit inside the fieldset padding in every browser */
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-consent legend + * { clear: both; }
+  #rie-webinar .rw-consent__intro { font-size: 14px; color: var(--rw-ink-soft); margin-bottom: 14px; }
+  #rie-webinar .rw-check {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 4px 12px;
+    align-items: start;
+    padding: 14px 0;
+  }
+  #rie-webinar .rw-check + .rw-check { border-top: 1px dashed var(--rw-line); }
+  #rie-webinar .rw-check input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin: 1px 0 0;
+    accent-color: var(--rw-accent);
+    cursor: pointer;
+  }
+  #rie-webinar .rw-check label { font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--rw-ink); cursor: pointer; }
+  #rie-webinar .rw-disclosure { grid-column: 2; font-size: 13.5px; line-height: 1.5; color: var(--rw-ink-soft); }
+
+  #rie-webinar .rw-submit { margin-top: 24px; }
+  #rie-webinar .rw-legal { margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: var(--rw-ink-soft); }
+  #rie-webinar .rw-status { margin-top: 12px; font-size: 15px; font-weight: 500; color: var(--rw-error); }
+  #rie-webinar .rw-status:empty { display: none; }
+
+  #rie-webinar .rw-result {
+    padding: 26px 22px;
+    border-radius: 18px;
+    text-align: left;
+  }
+  #rie-webinar .rw-result:focus { outline: none; }
+  #rie-webinar .rw-result--preview { margin-top: 20px; background: #FFF6DC; border: 1px dashed #C9A84A; color: #3D2C00; }
+  #rie-webinar .rw-result--preview p + p { margin-top: 10px; }
+  #rie-webinar .rw-result--confirm { background: var(--rw-bg-alt); border: 1px solid var(--rw-line); }
+  #rie-webinar .rw-result__title { font-family: var(--rw-serif); font-size: 28px; font-weight: 600; line-height: 1.2; margin-bottom: 8px; color: inherit; }
+
+  /* ---------- FAQ ---------- */
+  #rie-webinar .rw-faq { max-width: 780px; }
+  #rie-webinar .rw-faq details { border-bottom: 1px solid var(--rw-line); }
+  #rie-webinar .rw-faq details:first-of-type { border-top: 1px solid var(--rw-line); }
+  #rie-webinar .rw-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 60px;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--rw-ink);
+  }
+  #rie-webinar .rw-faq summary::-webkit-details-marker { display: none; }
+  #rie-webinar .rw-faq summary::marker { content: ""; }
+  #rie-webinar .rw-faq summary::after {
+    content: "+";
+    flex: none;
+    width: 32px; height: 32px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--rw-line);
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--rw-accent);
+  }
+  #rie-webinar .rw-faq details[open] summary::after { content: "\2212"; }
+  #rie-webinar .rw-faq .rw-faq__a { padding: 0 44px 22px 0; color: var(--rw-ink-soft); }
+
+  /* ---------- Final CTA ---------- */
+  #rie-webinar .rw-final { background: var(--rw-dark); color: var(--rw-dark-ink); text-align: center; }
+  #rie-webinar .rw-final .rw-h2 { color: var(--rw-dark-ink); }
+  #rie-webinar .rw-final .rw-h2 em { color: #E3C2A6; }
+  #rie-webinar .rw-final .rw-kicker { color: #E3C2A6; }
+  #rie-webinar .rw-final .rw-lead { color: #E6D9CC; margin: 18px auto 30px; max-width: 600px; }
+  #rie-webinar .rw-final__when { margin-top: 18px; font-size: 15px; color: #E6D9CC; }
+  #rie-webinar .rw-final a:focus-visible { outline-color: var(--rw-dark-ink); }
+
+  /* ---------- Footer ---------- */
+  #rie-webinar .rw-footer { padding: 32px 0 40px; background: var(--rw-dark); border-top: 1px solid #47382F; color: #CDBDAF; font-size: 14px; line-height: 1.6; }
+  #rie-webinar .rw-footer a { color: #F1E2D4; }
+  #rie-webinar .rw-footer__links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 12px; }
+  #rie-webinar .rw-footer p + p { margin-top: 8px; }
+
+  /* ---------- Larger screens ---------- */
+  @media (min-width: 600px) {
+    #rie-webinar .rw-hero__cta .rw-btn { width: auto; }
+    #rie-webinar .rw-card { padding: 36px 34px; }
+    #rie-webinar .rw-fit { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 900px) {
+    #rie-webinar .rw-wrap { padding: 0 32px; }
+    #rie-webinar .rw-section { padding: 104px 0; }
+    #rie-webinar .rw-hero { padding: 64px 0 104px; }
+    #rie-webinar .rw-hero .rw-lead { font-size: 19px; }
+    #rie-webinar .rw-hero__grid { grid-template-columns: 1.08fr 0.92fr; gap: 64px; }
+    #rie-webinar .rw-hero__media { margin: 0 0 0 auto; }
+    #rie-webinar .rw-outcomes { grid-template-columns: repeat(3, 1fr); }
+    #rie-webinar .rw-practical { grid-template-columns: 1fr auto; padding: 30px 34px; }
+    #rie-webinar .rw-about { grid-template-columns: 0.85fr 1.15fr; gap: 72px; }
+    #rie-webinar .rw-register { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
+    #rie-webinar .rw-register__intro { position: sticky; top: 32px; }
+    #rie-webinar .rw-quotes { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #rie-webinar *, #rie-webinar *::before, #rie-webinar *::after { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+
+<!--
+  GO LIVE SWITCH + SUBMISSION SETTINGS
+  data-mode="preview"   Preview banner shows. A valid submit shows a clearly
+                        labeled preview notice and never a success message.
+  data-mode="live"      Use only after the launch checklist passes.
+  data-thank-you-url    REPLACE: THANK-YOU PAGE URL (optional). In live mode the
+                        visitor is sent here after submitting. Leave empty to
+                        show the on-page confirmation instead.
+  data-redirect-delay-ms  Time given to the HighLevel tracking script to send the
+                        submission before the page changes. 1500 is a safe start.
+-->
+<div id="rie-webinar" data-mode="preview" data-thank-you-url="" data-redirect-delay-ms="1500">
+
+  <div class="rw-preview-bar" data-rw-preview-only role="note">
+    <strong>Preview mode.</strong> Registration is not live yet. This page is for design review and connection testing only.
+  </div>
+
+  <header class="rw-topbar">
+    <div class="rw-wrap rw-topbar__inner">
+      <span class="rw-wordmark">Rie Artistry<small>with Cherie Simmons</small></span>
+      <a class="rw-topbar__link" href="#rw-register">Save my free spot</a>
+    </div>
+  </header>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="rw-hero" aria-labelledby="rw-title">
+    <div class="rw-wrap rw-hero__grid">
+      <div class="rw-hero__copy">
+        <p class="rw-pill"><span class="rw-pill__dot" aria-hidden="true"></span>Free live training</p>
+
+        <!-- REPLACE: WEBINAR TITLE (working headline below) -->
+        <h1 id="rw-title" class="rw-h1">Turn “How much?” into <em>“When can I book?”</em></h1>
+
+        <p class="rw-lead">A free live training for beauty professionals. Learn how to communicate your value, guide price questions toward a clear next step, and find an additional offer that fits the clients you already serve.</p>
+
+        <div class="rw-when">
+          <div class="rw-when__row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+            <span><span class="rw-when__main">Sunday, October 18, 2026</span><span class="rw-when__sub">Live online</span></span>
+          </div>
+          <div class="rw-when__row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <span><span class="rw-when__main">7 PM Eastern</span><span class="rw-when__sub"><span class="rw-nowrap">6 PM Central</span> · <span class="rw-nowrap">5 PM Mountain</span> · <span class="rw-nowrap">4 PM Pacific</span></span></span>
+          </div>
+        </div>
+
+        <div class="rw-hero__cta">
+          <a class="rw-btn" href="#rw-register">Save My Free Spot</a>
+          <p class="rw-micro">Free to attend. Hosted by Cherie Simmons, owner of Rie Artistry.</p>
+        </div>
+      </div>
+
+      <figure class="rw-hero__media">
+        <!-- REPLACE: HERO PHOTO. Paste your image URL into src and describe the photo in alt. Portrait (4:5) works best. -->
+        <img class="rw-arch"
+             src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23EFE3D6'/%3E%3Cstop offset='1' stop-color='%23E2D0BE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='390' r='120' fill='%23D5BFA9'/%3E%3Cpath d='M170 1000c0-170 103-300 230-300s230 130 230 300z' fill='%23D5BFA9'/%3E%3Ctext x='400' y='150' text-anchor='middle' font-family='Georgia,serif' font-size='44' fill='%236E4334'%3EPhoto of Cherie%3C/text%3E%3Ctext x='400' y='200' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' letter-spacing='3' fill='%237A6357'%3EREPLACE HERO PHOTO%3C/text%3E%3C/svg%3E"
+             alt="Cherie Simmons, owner of Rie Artistry"
+             width="800" height="1000" fetchpriority="high">
+        <figcaption class="rw-hero__badge"><strong>Cherie Simmons</strong>Owner, Rie Artistry</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= WHO IT'S FOR ======================= -->
+  <section class="rw-section rw-section--alt" aria-labelledby="rw-for-title">
+    <div class="rw-wrap">
+      <div class="rw-section-head">
+        <p class="rw-kicker">Who this training is for</p>
+        <h2 id="rw-for-title" class="rw-h2">For beauty professionals ready to turn their skills into a <em>growing business</em></h2>
+      </div>
+
+      <ul class="rw-chips" aria-label="Beauty professionals this training is for">
+        <li>Lash artists</li>
+        <li>Brow artists</li>
+        <li>Hairstylists</li>
+        <li>Makeup artists</li>
+        <li>Nail technicians</li>
+        <li>Estheticians</li>
+        <li>Permanent makeup artists</li>
+        <li>Other beauty service providers</li>
+      </ul>
+
+      <ul class="rw-fit">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.5"/></svg>
+          <span>You are skilled at your craft and want potential clients to understand why booking with you is worth it.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.5"/></svg>
+          <span>You get “How much?” messages and want a clear, comfortable way to move the conversation toward booking.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.5"/></svg>
+          <span>You want to grow by serving the clients you already have even better, not only by finding new ones.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.5"/></svg>
+          <span>You prefer practical examples you can put to work in your own business over hype.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= WHAT YOU'LL LEARN ======================= -->
+  <section class="rw-section" aria-labelledby="rw-learn-title">
+    <div class="rw-wrap">
+      <div class="rw-section-head">
+        <p class="rw-kicker">What you will learn</p>
+        <h2 id="rw-learn-title" class="rw-h2">Three practical skills for a <em>stronger beauty business</em></h2>
+      </div>
+
+      <ol class="rw-outcomes">
+        <li class="rw-outcome">
+          <span class="rw-outcome__num" aria-hidden="true">01</span>
+          <h3 class="rw-h3">Communicate your value</h3>
+          <p>How to communicate your value so potential clients understand why they should choose you.</p>
+        </li>
+        <li class="rw-outcome">
+          <span class="rw-outcome__num" aria-hidden="true">02</span>
+          <h3 class="rw-h3">Move from “How much?” to booked</h3>
+          <p>How to guide the conversation from “How much?” toward a clear next step to booking.</p>
+        </li>
+        <li class="rw-outcome">
+          <span class="rw-outcome__num" aria-hidden="true">03</span>
+          <h3 class="rw-h3">Find your next offer</h3>
+          <p>How to identify an additional offer that fits your business and the clients you already serve.</p>
+        </li>
+      </ol>
+
+      <div class="rw-practical">
+        <p>We will work through practical examples together, so you can apply each idea to your own services, conversations, and clients.</p>
+        <a class="rw-btn" href="#rw-register">Save My Free Spot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ABOUT CHERIE ======================= -->
+  <section class="rw-section rw-section--alt" aria-labelledby="rw-about-title">
+    <div class="rw-wrap rw-about">
+      <!-- REPLACE: ABOUT PHOTO. Paste your image URL into src and describe the photo in alt. -->
+      <img class="rw-about__photo"
+           src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23EFE3D6'/%3E%3Cstop offset='1' stop-color='%23E2D0BE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='390' r='120' fill='%23D5BFA9'/%3E%3Cpath d='M170 1000c0-170 103-300 230-300s230 130 230 300z' fill='%23D5BFA9'/%3E%3Ctext x='400' y='150' text-anchor='middle' font-family='Georgia,serif' font-size='44' fill='%236E4334'%3EPhoto of Cherie%3C/text%3E%3Ctext x='400' y='200' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' letter-spacing='3' fill='%237A6357'%3EREPLACE ABOUT PHOTO%3C/text%3E%3C/svg%3E"
+           alt="Cherie Simmons at work in her studio"
+           width="800" height="1000" loading="lazy">
+
+      <div>
+        <p class="rw-kicker">Meet your host</p>
+        <h2 id="rw-about-title" class="rw-h2">Hi, I’m Cherie.</h2>
+        <p class="rw-body">I’m Cherie Simmons, the owner of Rie Artistry. I have built a six-figure beauty brand from scratch twice, so I know what it takes to turn a skill you love into a business people choose.</p>
+        <p class="rw-body">I also know how it feels to be great at your craft and still second-guess how to talk about your prices, answer inquiries, or decide what to offer next. This training is the practical conversation I wish more beauty professionals had access to.</p>
+
+        <ul class="rw-facts">
+          <li>Owner of Rie Artistry</li>
+          <li>Built a six-figure beauty brand from scratch, twice</li>
+          <li>Find me on Instagram at <a class="rw-ig" href="https://www.instagram.com/iamcherieb/" target="_blank" rel="noopener">@iamcherieb</a></li>
+        </ul>
+
+        <a class="rw-btn" href="#rw-register">Save My Free Spot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TESTIMONIALS (OFF) =======================
+       Add only real testimonials you have permission to share, then remove
+       the comment markers around this section. Do not add placeholder quotes.
+
+  <section class="rw-section" aria-labelledby="rw-quotes-title">
+    <div class="rw-wrap">
+      <div class="rw-section-head">
+        <p class="rw-kicker">Kind words</p>
+        <h2 id="rw-quotes-title" class="rw-h2">From beauty professionals I have worked with</h2>
+      </div>
+      <div class="rw-quotes">
+        <blockquote class="rw-quote">
+          <p>Paste the exact testimonial text here.</p>
+          <footer>First name, profession, city</footer>
+        </blockquote>
+        <blockquote class="rw-quote">
+          <p>Paste the exact testimonial text here.</p>
+          <footer>First name, profession, city</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  ==================================================================== -->
+
+  <!-- ======================= REGISTRATION ======================= -->
+  <section class="rw-section" id="rw-register" aria-labelledby="rw-register-title">
+    <div class="rw-wrap rw-register">
+      <div class="rw-register__intro">
+        <p class="rw-kicker">Free live training</p>
+        <h2 id="rw-register-title" class="rw-h2">Save your <em>free spot</em></h2>
+        <!-- REPLACE: WEBINAR TITLE (mention 2 of 3) -->
+        <p class="rw-lead">Join me live for a practical training on communicating your value, guiding price questions toward booking, and finding the right additional offer for your clients.</p>
+        <div class="rw-when">
+          <div class="rw-when__row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+            <span><span class="rw-when__main">Sunday, October 18, 2026</span><span class="rw-when__sub">Live online</span></span>
+          </div>
+          <div class="rw-when__row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <span><span class="rw-when__main">7 PM Eastern</span><span class="rw-when__sub"><span class="rw-nowrap">6 PM Central</span> · <span class="rw-nowrap">5 PM Mountain</span> · <span class="rw-nowrap">4 PM Pacific</span></span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rw-card">
+        <p class="rw-card__title">Reserve your spot</p>
+        <p class="rw-card__sub">It takes less than a minute. Name, email, mobile number, and industry are required.</p>
+
+        <!--
+          REGISTRATION FORM
+          Stable ID and name for HighLevel External Tracking: rie-webinar-registration
+          Keep the id, the name, and every input name="" the same after you connect it,
+          or your HighLevel field mapping and workflow filter will stop matching.
+        -->
+        <form id="rie-webinar-registration" name="rie-webinar-registration" class="rw-form" method="post" accept-charset="UTF-8">
+
+          <div class="rw-field">
+            <label class="rw-label" for="rw-first-name">First name</label>
+            <input class="rw-input" id="rw-first-name" name="first_name" type="text"
+                   autocomplete="given-name" autocapitalize="words" maxlength="60" required
+                   aria-describedby="rw-first-name-error">
+            <p class="rw-error" id="rw-first-name-error"></p>
+          </div>
+
+          <div class="rw-field">
+            <label class="rw-label" for="rw-email">Email</label>
+            <input class="rw-input" id="rw-email" name="email" type="email"
+                   autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="120" required
+                   aria-describedby="rw-email-error">
+            <p class="rw-error" id="rw-email-error"></p>
+          </div>
+
+          <div class="rw-field">
+            <label class="rw-label" for="rw-phone">Mobile number</label>
+            <input class="rw-input" id="rw-phone" name="phone" type="tel"
+                   inputmode="tel" autocomplete="tel" maxlength="25" required
+                   aria-describedby="rw-phone-hint rw-phone-error">
+            <span class="rw-hint" id="rw-phone-hint">We will only text you if you choose a text option below.</span>
+            <p class="rw-error" id="rw-phone-error"></p>
+          </div>
+
+          <div class="rw-field">
+            <label class="rw-label" for="rw-industry">What is your main beauty industry?</label>
+            <select class="rw-select" id="rw-industry" name="beauty_industry" required
+                    aria-describedby="rw-industry-error">
+              <option value="">Select your industry</option>
+              <option value="Lash artist">Lash artist</option>
+              <option value="Brow artist">Brow artist</option>
+              <option value="Hairstylist">Hairstylist</option>
+              <option value="Makeup artist">Makeup artist</option>
+              <option value="Nail technician">Nail technician</option>
+              <option value="Esthetician or skincare professional">Esthetician or skincare professional</option>
+              <option value="Permanent makeup artist">Permanent makeup artist</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="rw-error" id="rw-industry-error"></p>
+          </div>
+
+          <!-- Shown and required only when "Other" is selected. Disabled (and not submitted) otherwise. -->
+          <div class="rw-field rw-other" id="rw-industry-other-field" hidden>
+            <label class="rw-label" for="rw-industry-other">Tell us what you do.</label>
+            <input class="rw-input" id="rw-industry-other" name="beauty_industry_other" type="text"
+                   maxlength="80" disabled
+                   aria-describedby="rw-industry-other-error">
+            <p class="rw-error" id="rw-industry-other-error"></p>
+          </div>
+
+          <fieldset class="rw-consent">
+            <legend>Text and email preferences (optional)</legend>
+            <p class="rw-consent__intro">Each choice is separate. You can register without checking any of them.</p>
+
+            <!-- REPLACE: SMS DISCLOSURES. Draft wording below. Have it reviewed and make sure it matches your A2P 10DLC campaign registration. -->
+            <div class="rw-check">
+              <input type="checkbox" id="rw-sms-reminders" name="sms_webinar_reminders" value="Yes"
+                     aria-describedby="rw-sms-reminders-terms">
+              <label for="rw-sms-reminders">Text me reminders about this free training.</label>
+              <p class="rw-disclosure" id="rw-sms-reminders-terms">By checking this box, you agree to receive automated text messages from Rie Artistry about this training at the mobile number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not required to register.</p>
+            </div>
+
+            <div class="rw-check">
+              <input type="checkbox" id="rw-sms-promo" name="sms_promotional" value="Yes"
+                     aria-describedby="rw-sms-promo-terms">
+              <label for="rw-sms-promo">Text me offers and updates from Rie Artistry.</label>
+              <p class="rw-disclosure" id="rw-sms-promo-terms">By checking this box, you agree to receive recurring automated marketing text messages from Rie Artistry, including offers and program announcements, at the mobile number provided. Consent is not a condition of registration or purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</p>
+            </div>
+
+            <div class="rw-check">
+              <input type="checkbox" id="rw-email-marketing" name="email_marketing" value="Yes"
+                     aria-describedby="rw-email-marketing-terms">
+              <label for="rw-email-marketing">Email me tips, updates, and offers from Rie Artistry.</label>
+              <p class="rw-disclosure" id="rw-email-marketing-terms">This is separate from the training emails. You can unsubscribe at any time.</p>
+            </div>
+          </fieldset>
+
+          <div class="rw-submit">
+            <button class="rw-btn rw-btn--block" id="rw-submit" type="submit">Save My Free Spot</button>
+            <p class="rw-preview-note" data-rw-preview-only>
+              <strong>Preview mode:</strong> this form is not live. Submitting it will not register you.
+            </p>
+            <div class="rw-status" id="rw-status" role="status" aria-live="polite"></div>
+            <p class="rw-legal">
+              By registering, you will receive emails about this training, including how to join.
+              See our <a href="#REPLACE-PRIVACY-POLICY-URL" target="_blank" rel="noopener">Privacy Policy</a>
+              and <a href="#REPLACE-TERMS-URL" target="_blank" rel="noopener">Terms</a>.
+              <!-- REPLACE: PRIVACY POLICY URL and TERMS URL (the two href values above) -->
+            </p>
+          </div>
+        </form>
+
+        <!-- Preview result. Shown only in preview mode after a valid test submit. Not a success message. -->
+        <div class="rw-result rw-result--preview" id="rw-preview-result" tabindex="-1" hidden>
+          <p class="rw-result__title">Preview only. You are not registered.</p>
+          <p>Your entries passed every check, but this page is in preview mode, so this was not a real registration and no confirmation will be sent from this page.</p>
+          <p>If the HighLevel tracking script is already installed, a test contact may appear in HighLevel. Use it to check field mapping, then delete it.</p>
+        </div>
+
+        <!-- Live confirmation. Shown only in live mode when no thank-you page URL is set. -->
+        <div class="rw-result rw-result--confirm" id="rw-confirm" tabindex="-1" hidden>
+          <p class="rw-result__title">Your spot is saved.</p>
+          <p>Thank you for registering for the free live training on Sunday, October 18, 2026 at 7 PM Eastern. Watch your email for the details on how to join.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAQ ======================= -->
+  <section class="rw-section rw-section--alt" aria-labelledby="rw-faq-title">
+    <div class="rw-wrap">
+      <div class="rw-section-head">
+        <p class="rw-kicker">Questions</p>
+        <h2 id="rw-faq-title" class="rw-h2">Good to know</h2>
+      </div>
+
+      <div class="rw-faq">
+        <details>
+          <summary>Is the training really free?</summary>
+          <div class="rw-faq__a"><p>Yes. This is a free live training for beauty professionals.</p></div>
+        </details>
+        <details>
+          <summary>When is it?</summary>
+          <div class="rw-faq__a"><p>Sunday, October 18, 2026 at 7 PM Eastern. That is 6 PM Central, 5 PM Mountain, and 4 PM Pacific. It is live, so plan to join at that time.</p></div>
+        </details>
+        <details>
+          <summary>How do I join?</summary>
+          <div class="rw-faq__a"><p>Register with the form on this page. The details for joining will be sent to the email address you register with.</p></div>
+        </details>
+        <details>
+          <summary>Who is this for?</summary>
+          <div class="rw-faq__a"><p>Lash artists, brow artists, hairstylists, makeup artists, nail technicians, estheticians, permanent makeup artists, and other beauty service providers who want to turn their skills into a growing business.</p></div>
+        </details>
+        <details>
+          <summary>Why do you ask for my mobile number?</summary>
+          <div class="rw-faq__a"><p>So you can choose to get text reminders about the training. Webinar reminders and promotional texts are separate, optional choices. We only text you if you check a text option on the form.</p></div>
+        </details>
+        <details>
+          <summary>Will you be selling anything?</summary>
+          <div class="rw-faq__a"><p>The training itself is free. At the end, I will briefly introduce my upcoming eight-week group mentorship for anyone who wants to keep working together. There is no obligation.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FINAL INVITATION ======================= -->
+  <section class="rw-section rw-final" aria-labelledby="rw-final-title">
+    <div class="rw-wrap">
+      <p class="rw-kicker">Join me live</p>
+      <h2 id="rw-final-title" class="rw-h2">Your skills deserve a business <em>clients choose</em></h2>
+      <p class="rw-lead">Come with a few real client conversations in mind. We will work through practical examples you can apply to your own business.</p>
+      <a class="rw-btn rw-btn--light" href="#rw-register">Save My Free Spot</a>
+      <p class="rw-final__when">Free live training · <span class="rw-nowrap">Sunday, October 18, 2026</span> · <span class="rw-nowrap">7 PM Eastern</span></p>
+    </div>
+  </section>
+
+  <footer class="rw-footer">
+    <div class="rw-wrap">
+      <div class="rw-footer__links">
+        <a href="#REPLACE-PRIVACY-POLICY-URL" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="#REPLACE-TERMS-URL" target="_blank" rel="noopener">Terms</a>
+        <a href="https://www.instagram.com/iamcherieb/" target="_blank" rel="noopener">Instagram @iamcherieb</a>
+      </div>
+      <p>© 2026 Rie Artistry. All rights reserved.</p>
+      <!-- Optional disclosure slot. Edit or remove to match your legal guidance. -->
+      <p>Cherie’s business results are her own and are not a promise or guarantee of results for anyone else.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+/*
+  Rie Artistry registration form behavior. Plain JavaScript, no libraries.
+
+  How it stays compatible with HighLevel External Tracking:
+  - Validation uses the browser's built-in form validation. If anything is
+    missing or invalid, the browser never fires the "submit" event, so a
+    tracking script never sees an incomplete submission.
+  - When everything is valid, the normal "submit" event fires and bubbles.
+    This script never calls stopPropagation, so any tracking script listening
+    for form submissions still receives it.
+  - preventDefault only stops the browser from loading a new page with the
+    form data in it (the same pattern AJAX form plugins use). The page then
+    shows the preview notice, the confirmation, or goes to your thank-you page.
+  - Nothing is saved in the browser. No data is sent anywhere by this script.
+*/
+(function () {
+  'use strict';
+
+  function init() {
+    var root = document.getElementById('rie-webinar');
+    var form = document.getElementById('rie-webinar-registration');
+    if (!root || !form || root.getAttribute('data-rw-ready') === 'true') { return; }
+    root.setAttribute('data-rw-ready', 'true');
+
+    var mode = (root.getAttribute('data-mode') || '').toLowerCase() === 'live' ? 'live' : 'preview';
+    var thankYouUrl = (root.getAttribute('data-thank-you-url') || '').replace(/^\s+|\s+$/g, '');
+    var delay = parseInt(root.getAttribute('data-redirect-delay-ms'), 10);
+    if (isNaN(delay) || delay < 0) { delay = 1500; }
+
+    if (mode === 'live') {
+      var previewOnly = root.querySelectorAll('[data-rw-preview-only]');
+      for (var p = 0; p < previewOnly.length; p++) { previewOnly[p].parentNode.removeChild(previewOnly[p]); }
+    }
+
+    var firstName = form.elements['first_name'];
+    var email = form.elements['email'];
+    var phone = form.elements['phone'];
+    var industry = form.elements['beauty_industry'];
+    var other = form.elements['beauty_industry_other'];
+    var otherField = document.getElementById('rw-industry-other-field');
+    var submitBtn = document.getElementById('rw-submit');
+    var status = document.getElementById('rw-status');
+    var previewResult = document.getElementById('rw-preview-result');
+    var confirmBox = document.getElementById('rw-confirm');
+    var fields = [firstName, email, phone, industry, other];
+
+    var MESSAGES = {
+      first_name: 'Please enter your first name.',
+      email_missing: 'Please enter your email address.',
+      email_invalid: 'Please enter a valid email address, like name@example.com.',
+      phone_missing: 'Please enter your mobile number.',
+      phone_invalid: 'Please enter a mobile number with area code, like (555) 123-4567.',
+      beauty_industry: 'Please choose your main beauty industry.',
+      beauty_industry_other: 'Please tell us what you do.'
+    };
+
+    function trim(v) { return (v || '').replace(/^\s+|\s+$/g, ''); }
+
+    // Extra rules on top of the browser's checks. They use setCustomValidity,
+    // so the browser still blocks the submit when a rule fails.
+    function applyRules(field) {
+      var v = trim(field.value);
+      var msg = '';
+      if (field === firstName && field.value !== '' && v === '') {
+        msg = MESSAGES.first_name;
+      } else if (field === email && v !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+        msg = MESSAGES.email_invalid;
+      } else if (field === phone && v !== '') {
+        var digits = v.replace(/\D/g, '');
+        var okChars = /^[+()\d\s.\-]+$/.test(v);
+        var okLength = digits.length === 10 ||
+          (digits.length === 11 && digits.charAt(0) === '1') ||
+          (v.charAt(0) === '+' && digits.length >= 8 && digits.length <= 15);
+        if (!okChars || !okLength) { msg = MESSAGES.phone_invalid; }
+      } else if (field === other && !field.disabled && field.value !== '' && v === '') {
+        msg = MESSAGES.beauty_industry_other;
+      }
+      field.setCustomValidity(msg);
+    }
+
+    function messageFor(field) {
+      var v = field.validity;
+      if (v.valueMissing) {
+        if (field === email) { return MESSAGES.email_missing; }
+        if (field === phone) { return MESSAGES.phone_missing; }
+        return MESSAGES[field.name] || 'Please complete this field.';
+      }
+      if (v.customError) { return field.validationMessage; }
+      if (v.typeMismatch && field === email) { return MESSAGES.email_invalid; }
+      return 'Please check this field.';
+    }
+
+    function errorEl(field) {
+      return document.getElementById(field.id + '-error');
+    }
+
+    function showError(field) {
+      field.setAttribute('aria-invalid', 'true');
+      var el = errorEl(field);
+      if (el) { el.textContent = messageFor(field); }
+    }
+
+    function clearError(field) {
+      field.removeAttribute('aria-invalid');
+      var el = errorEl(field);
+      if (el) { el.textContent = ''; }
+    }
+
+    function refresh(field, showIfInvalid) {
+      applyRules(field);
+      if (field.validity.valid) {
+        clearError(field);
+      } else if (showIfInvalid || field.getAttribute('aria-invalid') === 'true') {
+        showError(field);
+      }
+    }
+
+    function syncOther() {
+      var isOther = industry.value === 'Other';
+      otherField.hidden = !isOther;
+      other.disabled = !isOther;
+      other.required = isOther;
+      if (!isOther) { other.value = ''; other.setCustomValidity(''); clearError(other); }
+    }
+
+    // Live feedback: fix errors as people type, flag problems when they leave a field.
+    for (var i = 0; i < fields.length; i++) {
+      (function (field) {
+        field.addEventListener('input', function () { refresh(field, false); });
+        field.addEventListener('change', function () { refresh(field, false); });
+        field.addEventListener('blur', function () { refresh(field, field.value !== ''); });
+      })(fields[i]);
+    }
+
+    industry.addEventListener('change', function () {
+      syncOther();
+      if (industry.value === 'Other') { other.focus(); }
+    });
+    syncOther();
+
+    // Run custom rules right before the browser validates (covers autofill too).
+    submitBtn.addEventListener('click', function () {
+      for (var j = 0; j < fields.length; j++) { applyRules(fields[j]); }
+      status.textContent = '';
+    });
+
+    // The browser fires "invalid" for each failing field and blocks the submit.
+    // We replace its default bubble with our inline messages.
+    var focusedThisRound = false;
+    form.addEventListener('invalid', function (e) {
+      var field = e.target;
+      e.preventDefault();
+      showError(field);
+      if (!focusedThisRound) {
+        focusedThisRound = true;
+        field.focus();
+        status.textContent = 'Please check the highlighted fields above.';
+        window.setTimeout(function () { focusedThisRound = false; }, 0);
+      }
+    }, true);
+
+    var sent = false;
+    form.addEventListener('submit', function (e) {
+      // Reached only when every field is valid.
+      e.preventDefault();
+      status.textContent = '';
+
+      if (mode !== 'live') {
+        previewResult.hidden = false;
+        previewResult.focus();
+        return;
+      }
+
+      if (sent) { return; }
+      sent = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving your spot…';
+
+      window.setTimeout(function () {
+        if (thankYouUrl) {
+          window.location.href = thankYouUrl;
+        } else {
+          form.hidden = true;
+          confirmBox.hidden = false;
+          confirmBox.focus();
+        }
+      }, delay);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
