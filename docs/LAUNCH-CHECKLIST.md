@@ -7,7 +7,8 @@ Run this with the page in **preview mode** on an unshared URL. Use your own emai
 - [x] Webinar title confirmed: it is the opening message, already in the hero and page title.
 - [ ] Both photos load on the live page (in HighLevel, their `src` points to your Media Storage URLs, not `images/...`).
 - [x] Privacy Policy and Terms drafts written (`legal/`).
-- [ ] **Blocker:** fill in the highlighted details (business name, email, mailing address, state), have the drafts reviewed, and publish both pages.
+- [x] Business details filled in (Rie Artistry LLC, email, mailing address, Florida).
+- [ ] Have both legal pages reviewed, then publish them as their own pages.
 - [ ] Both legal page links (under the form and in the footer) open your live Privacy Policy and Terms pages.
 - [ ] Date and time read **Sunday, October 18, 2026 · 7 PM Eastern** everywhere.
 - [x] Mentees are comfortable with their messages being shown (names are hidden).
