@@ -63,3 +63,29 @@ ${component}
 
 writeFileSync(join(here, 'preview.html'), page);
 console.log('Wrote preview.html');
+
+// Legal pages: legal/*-paste-ready.html -> privacy-policy.html, terms.html
+for (const [src, out, title] of [
+  ['legal/privacy-policy-paste-ready.html', 'privacy-policy.html', 'Privacy Policy | Rie Artistry'],
+  ['legal/terms-paste-ready.html', 'terms.html', 'Terms | Rie Artistry'],
+]) {
+  const body = readFileSync(join(here, src), 'utf8').trim();
+  writeFileSync(join(here, out), `<!doctype html>
+<!-- GENERATED FILE. Edit ${src}, then run: node build.mjs -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBF7F1">
+  <title>${title}</title>
+  <style>html, body { margin: 0; padding: 0; background: #FBF7F1; -webkit-text-size-adjust: 100%; }</style>
+</head>
+<body>
+<main>
+${body}
+</main>
+</body>
+</html>
+`);
+  console.log('Wrote ' + out);
+}

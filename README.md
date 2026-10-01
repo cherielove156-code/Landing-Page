@@ -8,6 +8,7 @@ Plain HTML and CSS with a small amount of JavaScript. No libraries, no build too
 |---|---|
 | [`preview.html`](preview.html) | Standalone page. Open in a browser to preview, or host outside HighLevel. |
 | [`highlevel-paste-ready.html`](highlevel-paste-ready.html) | Paste into a HighLevel **Custom JS/HTML** element. **Edit this file**, then run `node build.mjs`. |
+| [`legal/`](legal/) | Privacy Policy and Terms drafts, paste-ready for HighLevel. `node build.mjs` also writes `privacy-policy.html` and `terms.html`. |
 | [`docs/SETUP-GUIDE.md`](docs/SETUP-GUIDE.md) | Placing the page, replacing placeholders, hosting options, connecting HighLevel External Tracking. |
 | [`docs/LAUNCH-CHECKLIST.md`](docs/LAUNCH-CHECKLIST.md) | Contact capture, field mapping, consent values, and workflow trigger tests. |
 

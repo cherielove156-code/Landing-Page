@@ -22,8 +22,8 @@ Search `highlevel-paste-ready.html` for `REPLACE:`. Then run `node build.mjs` so
 | Webinar title (done) | Hero `<h1>`, `<title>` in `build.mjs` | Confirmed: "You’re good at what you do. Now let’s build the business around it." In HighLevel, use it as the page title in the page SEO settings too. |
 | `REPLACE: HERO PHOTO URL` | Hero `<img src="...">` | Already set to `images/cherie-bowen-hero.jpg`, which works in `preview.html`. **In HighLevel**, upload that file to Media Storage and paste its URL into `src`. |
 | `REPLACE: ABOUT PHOTO URL` | About `<img src="...">` | Already set to `images/cherie-bowen-about.jpg`. **In HighLevel**, upload it and paste its URL the same way. |
-| `REPLACE: PRIVACY POLICY URL` | Two `href="#REPLACE-PRIVACY-POLICY-URL"` links | One under the form, one in the footer. |
-| `REPLACE: TERMS URL` | Two `href="#REPLACE-TERMS-URL"` links | Same places. |
+| `REPLACE: PRIVACY POLICY URL` | Two `href="privacy-policy.html"` links | Draft page is in `legal/privacy-policy-paste-ready.html`. Fill in its highlighted details, publish it as its own HighLevel page, then put that page's URL in both links. |
+| `REPLACE: TERMS URL` | Two `href="terms.html"` links | Same steps with `legal/terms-paste-ready.html`. The two legal pages also link to each other and back to the training page, so update those links too. |
 | `REPLACE: SMS DISCLOSURES` | The two text-message consent paragraphs | Draft wording only. Have it reviewed, and make sure it matches your A2P 10DLC campaign registration. |
 | `REPLACE: THANK-YOU PAGE URL` | `data-thank-you-url=""` on `#rie-webinar` | Optional. Used only in live mode. |
 | `REPLACE: TESTIMONIAL IMAGE URLS` | "What my mentees say" section after "About" | Cropped message screenshots with no names showing (`images/testimonial-1.webp` to `-4.webp`). **In HighLevel**, upload them and paste each URL into `src`. Each image's `alt` text is a word-for-word transcription for screen readers. |
