@@ -9,8 +9,9 @@ Run this with the page in **preview mode** on an unshared URL. Use your own emai
 - [x] Privacy Policy and Terms drafts written (`legal/`).
 - [x] Business details filled in (Rie Artistry LLC, email, mailing address, Florida).
 - [x] Both legal pages reviewed.
-- [ ] Publish both legal pages as their own pages in HighLevel.
-- [ ] Both legal page links (under the form and in the footer) open your live Privacy Policy and Terms pages.
+- [x] Both legal pages published: training.rieartistry.com/privacy-policy and /terms.
+- [x] Landing page links point to the live Privacy Policy and Terms pages.
+- [ ] "Back to the free training" links on both legal pages point to the live landing page.
 - [ ] Date and time read **Sunday, October 18, 2026 · 7 PM Eastern** everywhere.
 - [x] Mentees are comfortable with their messages being shown (names are hidden).
 - [ ] All four testimonial screenshots load on the live page.
