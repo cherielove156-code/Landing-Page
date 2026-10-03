@@ -8,7 +8,7 @@ Use these answers in HighLevel's texting registration (usually **Settings → Ph
 |---|---|
 | Legal business name | Rie Artistry LLC (must match your EIN paperwork exactly) |
 | Brand name / DBA | Rie Artistry |
-| Website | https://training.rieartistry.com/ (or your main rieartistry.com site) |
+| Website | https://training.rieartistry.com/free-training-page (or your main rieartistry.com site) |
 | Business email | rieartistrystudio@gmail.com |
 | Address | 2950 W Cypress Creek Rd, Fort Lauderdale, Florida (add your ZIP code and any suite number) |
 
@@ -22,17 +22,15 @@ Use these answers in HighLevel's texting registration (usually **Settings → Ph
 
 **How people opt in (message flow / call to action):**
 
-> People opt in on our web registration form at LANDING PAGE URL. After entering their first name, email, mobile number, and industry, they may check either or both of two optional, unchecked boxes: "Text me reminders about this free training." and "Text me offers and updates from Rie Artistry." Each box has its own disclosure that names Rie Artistry, states the type of messages, says message frequency varies, message and data rates may apply, reply STOP to opt out or HELP for help, and that consent is not required to register or a condition of purchase, with links to our Privacy Policy (https://training.rieartistry.com/privacy-policy) and Terms (https://training.rieartistry.com/terms). Texting is optional. People can register without checking either box.
-
-Replace `LANDING PAGE URL` with the landing page address once it is live.
+> People opt in on our web registration form at https://training.rieartistry.com/free-training-page. After entering their first name, email, mobile number, and industry, they may check either or both of two optional, unchecked boxes: "Text me reminders about this free training." and "Text me offers and updates from Rie Artistry." Each box has its own disclosure that names Rie Artistry, states the type of messages, says message frequency varies, message and data rates may apply, reply STOP to opt out or HELP for help, and that consent is not required to register or a condition of purchase, with links to our Privacy Policy (https://training.rieartistry.com/privacy-policy) and Terms (https://training.rieartistry.com/terms). Texting is optional. People can register without checking either box.
 
 ## Sample messages
 
 Every sample starts with the brand name and ends with opt-out language. Use full links on your own domain in real messages; carriers often reject shortened links such as bit.ly.
 
 1. > Rie Artistry: Hi {first name}, you're registered for the free live training on Sun, Oct 18 at 7 PM ET. We'll text your joining link before we start. Reply STOP to opt out.
-2. > Rie Artistry: Reminder, the free training starts in 1 hour at 7 PM ET. Join here: https://training.rieartistry.com/ Reply STOP to opt out.
-3. > Rie Artistry: Enrollment is open for our 8-week group mentorship for beauty professionals. Details: https://training.rieartistry.com/ Msg & data rates may apply. Reply STOP to opt out.
+2. > Rie Artistry: Reminder, the free training starts in 1 hour at 7 PM ET. Join here: https://training.rieartistry.com/free-training-page Reply STOP to opt out.
+3. > Rie Artistry: Enrollment is open for our 8-week group mentorship for beauty professionals. Details: https://training.rieartistry.com/free-training-page Msg & data rates may apply. Reply STOP to opt out.
 
 ## Keywords and automatic replies
 

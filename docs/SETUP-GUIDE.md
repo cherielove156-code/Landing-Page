@@ -21,7 +21,7 @@ Search `highlevel-paste-ready.html` for `REPLACE:`. Then run `node build.mjs` so
 |---|---|---|
 | Webinar title (done) | Hero `<h1>`, `<title>` in `build.mjs` | Confirmed: "You’re good at what you do. Now let’s build the business around it." In HighLevel, use it as the page title in the page SEO settings too. |
 | Legal pages (done) | Links under the form and in the footer | Point to https://training.rieartistry.com/privacy-policy and https://training.rieartistry.com/terms. |
-| `REPLACE: LANDING PAGE URL` | "Back to the free training" links on both legal pages | Change `preview.html` to the landing page address once it is live. |
+| Landing page (done) | Live at https://training.rieartistry.com/free-training-page | Both legal pages link back to it. |
 | Photos and testimonials (done) | All six `<img src>` values | Point to your HighLevel Media Storage copies of the files in `images/`. |
 | `REPLACE: SMS DISCLOSURES` | The two text-message consent paragraphs | Draft wording only. Have it reviewed, and make sure it matches your A2P 10DLC campaign registration. |
 | `REPLACE: THANK-YOU PAGE URL` | `data-thank-you-url=""` on `#rie-webinar` | Optional. Used only in live mode. |
