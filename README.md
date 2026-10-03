@@ -10,6 +10,7 @@ Plain HTML and CSS with a small amount of JavaScript. No libraries, no build too
 | [`highlevel-paste-ready.html`](highlevel-paste-ready.html) | Paste into a HighLevel **Custom JS/HTML** element. **Edit this file**, then run `node build.mjs`. |
 | [`legal/`](legal/) | Privacy Policy and Terms drafts, paste-ready for HighLevel. `node build.mjs` also writes `privacy-policy.html` and `terms.html`. |
 | [`docs/SETUP-GUIDE.md`](docs/SETUP-GUIDE.md) | Placing the page, replacing placeholders, hosting options, connecting HighLevel External Tracking. |
+| [`docs/A2P-REGISTRATION.md`](docs/A2P-REGISTRATION.md) | Copy-and-paste answers for the A2P 10DLC texting registration, matched to the page wording. |
 | [`docs/LAUNCH-CHECKLIST.md`](docs/LAUNCH-CHECKLIST.md) | Contact capture, field mapping, consent values, and workflow trigger tests. |
 
 **Status: preview.** The form is not connected and shows a labeled preview notice on submit. Placeholders are marked `REPLACE:` in the source.
