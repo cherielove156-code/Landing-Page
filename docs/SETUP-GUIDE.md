@@ -22,11 +22,9 @@ Search `highlevel-paste-ready.html` for `REPLACE:`. Then run `node build.mjs` so
 | Webinar title (done) | Hero `<h1>`, `<title>` in `build.mjs` | Confirmed: "You’re good at what you do. Now let’s build the business around it." In HighLevel, use it as the page title in the page SEO settings too. |
 | Legal pages (done) | Links under the form and in the footer | Point to https://training.rieartistry.com/privacy-policy and https://training.rieartistry.com/terms. |
 | `REPLACE: LANDING PAGE URL` | "Back to the free training" links on both legal pages | Change `preview.html` to the landing page address once it is live. |
-| `REPLACE: HERO PHOTO URL` | Hero `<img src="...">` | Already set to `images/cherie-bowen-hero.jpg`, which works in `preview.html`. **In HighLevel**, upload that file to Media Storage and paste its URL into `src`. |
-| `REPLACE: ABOUT PHOTO URL` | About `<img src="...">` | Already set to `images/cherie-bowen-about.jpg`. **In HighLevel**, upload it and paste its URL the same way. |
+| Photos and testimonials (done) | All six `<img src>` values | Point to your HighLevel Media Storage copies of the files in `images/`. |
 | `REPLACE: SMS DISCLOSURES` | The two text-message consent paragraphs | Draft wording only. Have it reviewed, and make sure it matches your A2P 10DLC campaign registration. |
 | `REPLACE: THANK-YOU PAGE URL` | `data-thank-you-url=""` on `#rie-webinar` | Optional. Used only in live mode. |
-| `REPLACE: TESTIMONIAL IMAGE URLS` | "What my mentees say" section after "About" | Cropped message screenshots with no names showing (`images/testimonial-1.webp` to `-4.webp`). **In HighLevel**, upload them and paste each URL into `src`. Each image's `alt` text is a word-for-word transcription for screen readers. |
 | Footer disclosure | Last footer paragraph | A suggested results disclaimer. Edit or remove it to match your own legal guidance. |
 
 **Photos in HighLevel:** upload them to **Media Storage**, copy each file's URL, and paste it into `src`.
