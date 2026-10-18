@@ -179,9 +179,10 @@
   #rie-mentor .rm-was { font-family: var(--rm-sans); font-size: 22px; font-weight: 400; color: var(--rm-ink-soft); text-decoration-thickness: 2px; text-decoration-color: var(--rm-accent); margin-right: 8px; vertical-align: middle; }
   #rie-mentor .rm-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
   #rie-mentor .rm-seats { margin-top: 6px; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rm-accent-text); }
-  #rie-mentor .rm-guarantee { max-width: 920px; margin-top: 24px; padding: 20px 22px; border: 1px dashed var(--rm-accent); border-radius: 18px; background: var(--rm-surface); }
-  #rie-mentor .rm-guarantee-title { font-family: var(--rm-serif); font-size: 26px; font-weight: 600; line-height: 1.2; color: var(--rm-ink); margin-bottom: 6px; }
-  #rie-mentor .rm-guarantee p:not(.rm-guarantee-title) { color: var(--rm-ink-soft); }
+  #rie-mentor .rm-guarantee-line { max-width: 920px; margin-top: 22px; display: flex; justify-content: center; align-items: flex-start; gap: 10px; font-size: 16px; line-height: 1.5; color: var(--rm-ink); text-align: left; }
+  #rie-mentor .rm-guarantee-line svg { flex: none; width: 22px; height: 22px; color: var(--rm-accent); margin-top: 1px; }
+  #rie-mentor .rm-guarantee-line a { font-weight: 500; white-space: nowrap; }
+  #rie-mentor #rm-guarantee-faq { scroll-margin-top: 24px; }
 
   /* Proof */
   #rie-mentor .rm-proof { columns: 1; column-gap: 20px; }
@@ -440,10 +441,7 @@
           <a class="rm-btn rm-btn--block" href="https://link.fastpaydirect.com/payment-link/6ad45bccc0e70c7fefb75551" target="_top">Join VIP · $1,497</a>
         </div>
       </div>
-      <div class="rm-guarantee">
-        <p class="rm-guarantee-title">Two-Week Clarity Guarantee</p>
-        <p>Join the Week 1 and Week 2 calls, live or by recording, complete the homework for both weeks, and apply what we cover. If you still don’t have more clarity about your business, email <a href="mailto:rieartistrystudio@gmail.com">rieartistrystudio@gmail.com</a> by 11:59 PM Eastern on Monday, November 16, with proof of your completed Week 1 and Week 2 homework, and you will get a full refund. This applies to Standard and VIP.</p>
-      </div>
+      <p class="rm-guarantee-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>Backed by our Two-Week Clarity Guarantee.</b> <a href="#rm-guarantee-faq" onclick="var d=document.getElementById('rm-guarantee-faq');if(d){d.open=true;}">See how it works</a></span></p>
       <p class="rm-secure">Secure checkout. You will get a confirmation email with your next steps after you join.</p>
     </div>
   </section>
@@ -492,7 +490,7 @@
         <details><summary>Who is this for?</summary><div class="rm-faq-a"><p>Lash artists, brow artists, hairstylists, makeup artists, and other beauty professionals who want to grow their business with clearer positioning, better systems, and more intentional marketing.</p></div></details>
         <details><summary>Will this guarantee more clients or income?</summary><div class="rm-faq-a"><p>No one can promise that. You will get a clear plan, honest feedback, and accountability. Your results depend on your business and how much you put into the homework.</p></div></details>
         <details><summary>How many seats are there?</summary><div class="rm-faq-a"><p>This founding round has 15 seats, and only 5 of them are VIP. Founding prices end Friday, October 30.</p></div></details>
-        <details><summary>What is the Two-Week Clarity Guarantee?</summary><div class="rm-faq-a"><p>Join the Week 1 and Week 2 calls, live or by recording, complete the homework for both weeks, and apply what we cover. If you still don’t have more clarity about your business, email <a href="mailto:rieartistrystudio@gmail.com">rieartistrystudio@gmail.com</a> by 11:59 PM Eastern on Monday, November 16, with proof of your completed Week 1 and Week 2 homework, and you will get a full refund. This applies to Standard and VIP. Full details are in our <a href="https://training.rieartistry.com/terms" target="_top">Terms</a>.</p></div></details>
+        <details id="rm-guarantee-faq"><summary>What is the Two-Week Clarity Guarantee?</summary><div class="rm-faq-a"><p>Join the Week 1 and Week 2 calls, live or by recording, complete the homework for both weeks, and apply what we cover. If you still don’t have more clarity about your business, email <a href="mailto:rieartistrystudio@gmail.com">rieartistrystudio@gmail.com</a> by 11:59 PM Eastern on Monday, November 16, with proof of your completed Week 1 and Week 2 homework, and you will get a full refund. This applies to Standard and VIP. Full details are in our <a href="https://training.rieartistry.com/terms" target="_top">Terms</a>.</p></div></details>
       </div>
     </div>
   </section>
