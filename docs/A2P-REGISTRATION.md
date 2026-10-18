@@ -6,7 +6,8 @@ Use these answers in HighLevel's texting registration (usually **Settings → Ph
 
 | Field | Answer |
 |---|---|
-| Legal business name | Rie Artistry LLC (must match your EIN paperwork exactly) |
+| Business type | **Sole proprietor** (Rie Artistry LLC is not active). Choose the sole proprietor option in HighLevel's registration. |
+| Legal name | Your own legal name, exactly as on your ID or tax records |
 | Brand name / DBA | Rie Artistry |
 | Website | https://training.rieartistry.com/free-training-page (or your main rieartistry.com site) |
 | Business email | rieartistrystudio@gmail.com |
@@ -18,7 +19,7 @@ Use these answers in HighLevel's texting registration (usually **Settings → Ph
 
 **Campaign description:**
 
-> Rie Artistry LLC sends text messages to beauty professionals who opt in on our website. Messages include reminders and joining details for free live online trainings they registered for and, only for people who separately opt in, promotional messages about Rie Artistry programs and offers.
+> Rie Artistry sends text messages to beauty professionals who opt in on our website. Messages include reminders and joining details for free live online trainings they registered for and, only for people who separately opt in, promotional messages about Rie Artistry programs and offers.
 
 **How people opt in (message flow / call to action):**
 

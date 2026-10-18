@@ -68,7 +68,7 @@ console.log('Wrote preview.html');
 for (const [src, out, title] of [
   ['legal/privacy-policy-paste-ready.html', 'privacy-policy.html', 'Privacy Policy | Rie Artistry'],
   ['legal/terms-paste-ready.html', 'terms.html', 'Terms | Rie Artistry'],
-  ['mentorship/mentorship-paste-ready.html', 'mentorship.html', '8-Week Group Mentorship | Rie Artistry'],
+  ['mentorship/mentorship-paste-ready.html', 'mentorship.html', 'The Beauty Business Blueprint | Rie Artistry'],
 ]) {
   const body = readFileSync(join(here, src), 'utf8').trim();
   writeFileSync(join(here, out), `<!doctype html>

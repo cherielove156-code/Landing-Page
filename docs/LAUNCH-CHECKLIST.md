@@ -7,7 +7,7 @@ Run this with the page in **preview mode** on an unshared URL. Use your own emai
 - [x] Webinar title confirmed: it is the opening message, already in the hero and page title.
 - [ ] Both photos load on the live page (in HighLevel, their `src` points to your Media Storage URLs, not `images/...`).
 - [x] Privacy Policy and Terms drafts written (`legal/`).
-- [x] Business details filled in (Rie Artistry LLC, email, mailing address, Florida).
+- [x] Business details filled in (Rie Artistry, email, mailing address, Florida). The LLC is not active, so pages say "Rie Artistry" only.
 - [x] Both legal pages reviewed.
 - [x] Both legal pages published: training.rieartistry.com/privacy-policy and /terms.
 - [x] Landing page links point to the live Privacy Policy and Terms pages.
