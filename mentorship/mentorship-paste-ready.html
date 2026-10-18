@@ -118,10 +118,10 @@
     --wk-sub: var(--rm-ink-soft); --wk-num: var(--rm-accent); --wk-dot: var(--rm-gold); --wk-focus: var(--rm-accent);
     background: var(--wk-bg); border: 1px solid var(--wk-line); border-radius: 18px; color: var(--wk-ink);
   }
-  /* Rose weeks: every other week on phones (2, 4, 6, 8), a checkerboard in two columns (2, 3, 6, 7). */
+  /* Blush weeks (same color as the old homework boxes): every other week on phones (2, 4, 6, 8), a checkerboard in two columns (2, 3, 6, 7). */
   #rie-mentor .rm-week:nth-child(even) {
-    --wk-bg: var(--rm-accent); --wk-line: var(--rm-accent); --wk-ink: #FFFFFF;
-    --wk-sub: #FFFFFF; --wk-num: #FBE6EB; --wk-dot: #F5C6D2; --wk-focus: #FFFFFF;
+    --wk-bg: var(--rm-accent-soft); --wk-line: #F2C9D3; --wk-ink: var(--rm-ink);
+    --wk-sub: var(--rm-accent-text); --wk-num: var(--rm-accent-text); --wk-dot: var(--rm-accent); --wk-focus: var(--rm-accent);
   }
   #rie-mentor .rm-week summary { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 18px 20px; cursor: pointer; list-style: none; min-height: 64px; }
   #rie-mentor .rm-week summary:focus-visible { outline-color: var(--wk-focus); }
@@ -208,8 +208,8 @@
       --wk-sub: var(--rm-ink-soft); --wk-num: var(--rm-accent); --wk-dot: var(--rm-gold); --wk-focus: var(--rm-accent);
     }
     #rie-mentor .rm-week:nth-child(4n+3) {
-      --wk-bg: var(--rm-accent); --wk-line: var(--rm-accent); --wk-ink: #FFFFFF;
-      --wk-sub: #FFFFFF; --wk-num: #FBE6EB; --wk-dot: #F5C6D2; --wk-focus: #FFFFFF;
+      --wk-bg: var(--rm-accent-soft); --wk-line: #F2C9D3; --wk-ink: var(--rm-ink);
+      --wk-sub: var(--rm-accent-text); --wk-num: var(--rm-accent-text); --wk-dot: var(--rm-accent); --wk-focus: var(--rm-accent);
     }
     #rie-mentor .rm-bonuses { grid-template-columns: repeat(3, 1fr); }
     #rie-mentor .rm-tiers { grid-template-columns: 1fr 1fr; max-width: 920px; }
