@@ -14,6 +14,6 @@ Plain HTML and CSS with a small amount of JavaScript. No libraries, no build too
 | [`docs/A2P-REGISTRATION.md`](docs/A2P-REGISTRATION.md) | Copy-and-paste answers for the A2P 10DLC texting registration, matched to the page wording. |
 | [`docs/LAUNCH-CHECKLIST.md`](docs/LAUNCH-CHECKLIST.md) | Contact capture, field mapping, consent values, and workflow trigger tests. |
 
-**Status: preview.** The form is not connected and shows a labeled preview notice on submit. Placeholders are marked `REPLACE:` in the source.
+**Status: live** (`data-mode="live"`). Contacts are captured by HighLevel External Tracking; the page itself stores nothing. Set `data-mode="preview"` to bring back the test banner.
 
 Form: `id`/`name` = `rie-webinar-registration`. Fields: `first_name`, `email`, `phone`, `beauty_industry`, `beauty_industry_other`, `sms_webinar_reminders`, `sms_promotional`, `email_marketing`.

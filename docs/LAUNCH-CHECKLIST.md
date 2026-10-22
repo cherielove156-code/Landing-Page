@@ -80,7 +80,7 @@ Submit one test contact per row. Every box not listed must be **empty** (not `Ye
 
 ## 7. Go live
 
-- [ ] Set `data-mode="live"` on `#rie-webinar`.
+- [x] Set `data-mode="live"` on `#rie-webinar`.
 - [ ] Set `data-thank-you-url` if you are using a thank-you page, and confirm it loads.
 - [ ] (`preview.html` only) Remove the `noindex` robots line.
 - [ ] Re-paste the updated code into HighLevel (or redeploy), then hard-refresh. The striped preview banner is gone.
