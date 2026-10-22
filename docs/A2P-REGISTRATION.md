@@ -29,7 +29,7 @@ Use these answers in HighLevel's texting registration (usually **Settings → Ph
 
 Every sample starts with the brand name and ends with opt-out language. Use full links on your own domain in real messages; carriers often reject shortened links such as bit.ly.
 
-1. > Rie Artistry: Hi {first name}, you're registered for the free live training on Sun, Oct 18 at 7 PM ET. We'll text your joining link before we start. Reply STOP to opt out.
+1. > Rie Artistry: Hi {first name}, you're registered for the free live training on Sun, Nov 1 at 7 PM ET. We'll text your joining link before we start. Reply STOP to opt out.
 2. > Rie Artistry: Reminder, the free training starts in 1 hour at 7 PM ET. Join here: https://training.rieartistry.com/free-training-page Reply STOP to opt out.
 3. > Rie Artistry: Enrollment is open for our 8-week group mentorship for beauty professionals. Details: https://training.rieartistry.com/free-training-page Msg & data rates may apply. Reply STOP to opt out.
 
@@ -52,4 +52,4 @@ HighLevel handles STOP automatically and marks the contact as Do Not Disturb for
 
 ## Timing
 
-Approval often takes several days and can take a few weeks. The training is on October 18, so submit as soon as the landing page is live. Until the campaign is approved, plan to send reminders by email only.
+Approval often takes several days and can take a few weeks. The training is on November 1, so submit as soon as the landing page is live. Until the campaign is approved, plan to send reminders by email only.
