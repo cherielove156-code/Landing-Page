@@ -83,7 +83,7 @@ Submit one test contact per row. Every box not listed must be **empty** (not `Ye
 - [x] Set `data-mode="live"` on `#rie-webinar`.
 - [ ] Set `data-thank-you-url` if you are using a thank-you page, and confirm it loads.
 - [ ] (`preview.html` only) Remove the `noindex` robots line.
-- [ ] Re-paste the updated code into HighLevel (or redeploy), then hard-refresh. The striped preview banner is gone.
+- [ ] Re-paste the updated code into HighLevel (or redeploy), then hard-refresh. No "Preview mode" text shows anywhere on the page.
 - [ ] One final live submission creates a contact, enters the workflow once, and lands on the thank-you page or confirmation.
 - [ ] Delete all test contacts, and remove them from any workflows they entered.
 - [ ] Now share the link (Instagram bio, stories, DMs).

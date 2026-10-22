@@ -121,7 +121,7 @@ The `#rie-webinar` element carries the settings:
 <div id="rie-webinar" data-mode="preview" data-thank-you-url="" data-redirect-delay-ms="1500">
 ```
 
-- **`data-mode="preview"` (default).** A striped banner shows at the top, and a "Preview mode" note sits under the button. A valid submit shows "Preview only. You are not registered." It is never a success message. If the tracking script is installed, a test contact may still appear in HighLevel. That is how you test mapping, so delete test contacts afterward.
+- **`data-mode="preview"`.** A "Preview mode" note sits under the button (the top banner has been removed). A valid submit shows "Preview only. You are not registered." It is never a success message. If the tracking script is installed, a test contact may still appear in HighLevel. That is how you test mapping, so delete test contacts afterward.
 - **`data-mode="live"`.** Switch only after the checklist passes. The banner and note are removed. After a valid submit the button shows "Saving your spot…". After `data-redirect-delay-ms`, the visitor goes to `data-thank-you-url`, or sees an on-page confirmation if that is empty.
 - **`data-redirect-delay-ms`.** Gives the tracking script time to send the submission before the page changes. Keep 1500 unless testing shows you need more.
 

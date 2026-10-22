@@ -164,16 +164,8 @@
   #rie-webinar .rw-btn--light:hover { background: #F9D6DF; color: var(--rw-dark); }
   #rie-webinar .rw-btn svg { width: 18px; height: 18px; flex: none; }
 
-  /* ---------- Preview bar (removed automatically in live mode) ---------- */
-  #rie-webinar .rw-preview-bar {
-    background: repeating-linear-gradient(-45deg, #FCE8B2, #FCE8B2 14px, #F9DD94 14px, #F9DD94 28px);
-    color: #3D2C00;
-    font-size: 15px;
-    line-height: 1.45;
-    text-align: center;
-    padding: 12px 20px;
-    border-bottom: 1px solid #E2C46F;
-  }
+  /* ---------- Preview-only notes (hidden in live mode, even before the script runs) ---------- */
+  #rie-webinar[data-mode="live"] [data-rw-preview-only] { display: none !important; }
   #rie-webinar .rw-preview-note {
     margin-top: 14px;
     padding: 12px 14px;
@@ -612,7 +604,7 @@
 
 <!--
   GO LIVE SWITCH + SUBMISSION SETTINGS
-  data-mode="preview"   Preview banner shows. A valid submit shows a clearly
+  data-mode="preview"   Preview note shows under the form. A valid submit shows a clearly
                         labeled preview notice and never a success message.
   data-mode="live"      Use only after the launch checklist passes.
   data-thank-you-url    REPLACE: THANK-YOU PAGE URL (optional). In live mode the
@@ -622,10 +614,6 @@
                         submission before the page changes. 1500 is a safe start.
 -->
 <div id="rie-webinar" data-mode="live" data-thank-you-url="" data-redirect-delay-ms="1500">
-
-  <div class="rw-preview-bar" data-rw-preview-only role="note">
-    <strong>Preview mode.</strong> Registration is not live yet. This page is for design review and connection testing only.
-  </div>
 
   <header class="rw-topbar">
     <div class="rw-wrap rw-topbar__inner">
