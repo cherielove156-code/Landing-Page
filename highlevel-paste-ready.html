@@ -1,22 +1,15 @@
 <!--
   =====================================================================
-  RIE ARTISTRY · FREE LIVE TRAINING · LANDING PAGE + REGISTRATION FORM
+  RIE ARTISTRY · FREE LIVE TRAINING · LANDING PAGE + GHL WEBINAR FORM
   Paste-ready version for a HighLevel "Custom JS/HTML" (Code) element.
   =====================================================================
 
   This file is the single source of truth. preview.html is generated from
   it by running:  node build.mjs
 
-  EVERYTHING YOU NEED TO REPLACE IS MARKED WITH "REPLACE:"
-  Search this file for REPLACE: to find each spot.
-
-    REPLACE: THANK-YOU PAGE URL   (data-thank-you-url, optional)
-    GO LIVE SWITCH                (data-mode="preview" -> data-mode="live")
-
-  HIGHLEVEL EXTERNAL TRACKING SCRIPT
-  Do NOT paste it inside this element. Put it in the page or funnel
-  "Tracking Code > Head" setting so it loads once, before this form.
-  See docs/SETUP-GUIDE.md.
+  REGISTRATION: the GoHighLevel form "Webinar form " (DekZFd8JofbgjCDtupWl)
+  is embedded in the #rw-register section. Submissions go straight to GHL.
+  The form's fields, consent text and thank-you step are edited in GHL.
 
   All CSS below is scoped to #rie-webinar, so it will not restyle the
   rest of your HighLevel page.
@@ -602,18 +595,7 @@
   }
 </style>
 
-<!--
-  GO LIVE SWITCH + SUBMISSION SETTINGS
-  data-mode="preview"   Preview note shows under the form. A valid submit shows a clearly
-                        labeled preview notice and never a success message.
-  data-mode="live"      Use only after the launch checklist passes.
-  data-thank-you-url    REPLACE: THANK-YOU PAGE URL (optional). In live mode the
-                        visitor is sent here after submitting. Leave empty to
-                        show the on-page confirmation instead.
-  data-redirect-delay-ms  Time given to the HighLevel tracking script to send the
-                        submission before the page changes. 1500 is a safe start.
--->
-<div id="rie-webinar" data-mode="live" data-thank-you-url="" data-redirect-delay-ms="1500">
+<div id="rie-webinar">
 
   <header class="rw-topbar">
     <div class="rw-wrap rw-topbar__inner">
@@ -684,119 +666,28 @@
         <p class="rw-card__title">Reserve your spot</p>
         <p class="rw-card__sub">It takes less than a minute. Name, email, mobile number, and industry are required.</p>
 
-        <!--
-          REGISTRATION FORM
-          Stable ID and name for HighLevel External Tracking: rie-webinar-registration
-          Keep the id, the name, and every input name="" the same after you connect it,
-          or your HighLevel field mapping and workflow filter will stop matching.
-        -->
-        <form id="rie-webinar-registration" name="rie-webinar-registration" class="rw-form" method="post" accept-charset="UTF-8">
-
-          <div class="rw-field">
-            <label class="rw-label" for="rw-first-name">First name</label>
-            <input class="rw-input" id="rw-first-name" name="first_name" type="text"
-                   autocomplete="given-name" autocapitalize="words" maxlength="60" required
-                   aria-describedby="rw-first-name-error">
-            <p class="rw-error" id="rw-first-name-error"></p>
-          </div>
-
-          <div class="rw-field">
-            <label class="rw-label" for="rw-email">Email</label>
-            <input class="rw-input" id="rw-email" name="email" type="email"
-                   autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="120" required
-                   aria-describedby="rw-email-error">
-            <p class="rw-error" id="rw-email-error"></p>
-          </div>
-
-          <div class="rw-field">
-            <label class="rw-label" for="rw-phone">Mobile number</label>
-            <input class="rw-input" id="rw-phone" name="phone" type="tel"
-                   inputmode="tel" autocomplete="tel" maxlength="25" required
-                   aria-describedby="rw-phone-hint rw-phone-error">
-            <span class="rw-hint" id="rw-phone-hint">We will only text you if you choose a text option below.</span>
-            <p class="rw-error" id="rw-phone-error"></p>
-          </div>
-
-          <div class="rw-field">
-            <label class="rw-label" for="rw-industry">What is your main beauty industry?</label>
-            <select class="rw-select" id="rw-industry" name="beauty_industry" required
-                    aria-describedby="rw-industry-error">
-              <option value="">Select your industry</option>
-              <option value="Lash artist">Lash artist</option>
-              <option value="Brow artist">Brow artist</option>
-              <option value="Hairstylist">Hairstylist</option>
-              <option value="Makeup artist">Makeup artist</option>
-              <option value="Nail technician">Nail technician</option>
-              <option value="Esthetician or skincare professional">Esthetician or skincare professional</option>
-              <option value="Permanent makeup artist">Permanent makeup artist</option>
-              <option value="Other">Other</option>
-            </select>
-            <p class="rw-error" id="rw-industry-error"></p>
-          </div>
-
-          <!-- Shown and required only when "Other" is selected. Disabled (and not submitted) otherwise. -->
-          <div class="rw-field rw-other" id="rw-industry-other-field" hidden>
-            <label class="rw-label" for="rw-industry-other">Tell us what you do.</label>
-            <input class="rw-input" id="rw-industry-other" name="beauty_industry_other" type="text"
-                   maxlength="80" disabled
-                   aria-describedby="rw-industry-other-error">
-            <p class="rw-error" id="rw-industry-other-error"></p>
-          </div>
-
-          <fieldset class="rw-consent">
-            <legend>Text and email preferences (optional)</legend>
-            <p class="rw-consent__intro">Each choice is separate. You can register without checking any of them.</p>
-
-            <!-- SMS DISCLOSURES (final). Matches docs/A2P-REGISTRATION.md. If you change this wording, update your A2P campaign to match. -->
-            <div class="rw-check">
-              <input type="checkbox" id="rw-sms-reminders" name="sms_webinar_reminders" value="Yes"
-                     aria-describedby="rw-sms-reminders-terms">
-              <label for="rw-sms-reminders">Text me reminders about this free training.</label>
-              <p class="rw-disclosure" id="rw-sms-reminders-terms">By checking this box, you agree to receive automated text messages from Rie Artistry about this training at the mobile number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not required to register. See our <a href="https://training.rieartistry.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://training.rieartistry.com/terms" target="_blank" rel="noopener">Terms</a>.</p>
-            </div>
-
-            <div class="rw-check">
-              <input type="checkbox" id="rw-sms-promo" name="sms_promotional" value="Yes"
-                     aria-describedby="rw-sms-promo-terms">
-              <label for="rw-sms-promo">Text me offers and updates from Rie Artistry.</label>
-              <p class="rw-disclosure" id="rw-sms-promo-terms">By checking this box, you agree to receive recurring automated marketing text messages from Rie Artistry, including offers and program announcements, at the mobile number provided. Consent is not a condition of registration or purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. See our <a href="https://training.rieartistry.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://training.rieartistry.com/terms" target="_blank" rel="noopener">Terms</a>.</p>
-            </div>
-
-            <div class="rw-check">
-              <input type="checkbox" id="rw-email-marketing" name="email_marketing" value="Yes"
-                     aria-describedby="rw-email-marketing-terms">
-              <label for="rw-email-marketing">Email me tips, updates, and offers from Rie Artistry.</label>
-              <p class="rw-disclosure" id="rw-email-marketing-terms">This is separate from the training emails. You can unsubscribe at any time.</p>
-            </div>
-          </fieldset>
-
-          <div class="rw-submit">
-            <button class="rw-btn rw-btn--block" id="rw-submit" type="submit">Save My Free Spot</button>
-            <p class="rw-preview-note" data-rw-preview-only>
-              <strong>Preview mode:</strong> this form is not live. Submitting it will not register you.
-            </p>
-            <div class="rw-status" id="rw-status" role="status" aria-live="polite"></div>
-            <p class="rw-legal">
-              By registering, you will receive emails about this training, including how to join.
-              See our <a href="https://training.rieartistry.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
-              and <a href="https://training.rieartistry.com/terms" target="_blank" rel="noopener">Terms</a>.
-              <!-- Live legal pages on training.rieartistry.com -->
-            </p>
-          </div>
-        </form>
-
-        <!-- Preview result. Shown only in preview mode after a valid test submit. Not a success message. -->
-        <div class="rw-result rw-result--preview" id="rw-preview-result" tabindex="-1" hidden>
-          <p class="rw-result__title">Preview only. You are not registered.</p>
-          <p>Your entries passed every check, but this page is in preview mode, so this was not a real registration and no confirmation will be sent from this page.</p>
-          <p>If the HighLevel tracking script is already installed, a test contact may appear in HighLevel. Use it to check field mapping, then delete it.</p>
-        </div>
-
-        <!-- Live confirmation. Shown only in live mode when no thank-you page URL is set. -->
-        <div class="rw-result rw-result--confirm" id="rw-confirm" tabindex="-1" hidden>
-          <p class="rw-result__title">Your spot is saved.</p>
-          <p>Thank you for registering for the free live training on Sunday, November 1, 2026 at 7 PM Eastern. Watch your email for the details on how to join.</p>
-        </div>
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/DekZFd8JofbgjCDtupWl"
+    style="width:100%;height:100%;border:none;border-radius:0px"
+    id="inline-DekZFd8JofbgjCDtupWl"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Webinar form "
+    data-height="914"
+    data-layout-iframe-id="inline-DekZFd8JofbgjCDtupWl"
+    data-form-id="DekZFd8JofbgjCDtupWl"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Webinar form "
+    
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </div>
     </div>
   </section>
@@ -1028,202 +919,3 @@
     </div>
   </footer>
 </div>
-
-<script>
-/*
-  Rie Artistry registration form behavior. Plain JavaScript, no libraries.
-
-  How it stays compatible with HighLevel External Tracking:
-  - Validation uses the browser's built-in form validation. If anything is
-    missing or invalid, the browser never fires the "submit" event, so a
-    tracking script never sees an incomplete submission.
-  - When everything is valid, the normal "submit" event fires and bubbles.
-    This script never calls stopPropagation, so any tracking script listening
-    for form submissions still receives it.
-  - preventDefault only stops the browser from loading a new page with the
-    form data in it (the same pattern AJAX form plugins use). The page then
-    shows the preview notice, the confirmation, or goes to your thank-you page.
-  - Nothing is saved in the browser. No data is sent anywhere by this script.
-*/
-(function () {
-  'use strict';
-
-  function init() {
-    var root = document.getElementById('rie-webinar');
-    var form = document.getElementById('rie-webinar-registration');
-    if (!root || !form || root.getAttribute('data-rw-ready') === 'true') { return; }
-    root.setAttribute('data-rw-ready', 'true');
-
-    var mode = (root.getAttribute('data-mode') || '').toLowerCase() === 'live' ? 'live' : 'preview';
-    var thankYouUrl = (root.getAttribute('data-thank-you-url') || '').replace(/^\s+|\s+$/g, '');
-    var delay = parseInt(root.getAttribute('data-redirect-delay-ms'), 10);
-    if (isNaN(delay) || delay < 0) { delay = 1500; }
-
-    if (mode === 'live') {
-      var previewOnly = root.querySelectorAll('[data-rw-preview-only]');
-      for (var p = 0; p < previewOnly.length; p++) { previewOnly[p].parentNode.removeChild(previewOnly[p]); }
-    }
-
-    var firstName = form.elements['first_name'];
-    var email = form.elements['email'];
-    var phone = form.elements['phone'];
-    var industry = form.elements['beauty_industry'];
-    var other = form.elements['beauty_industry_other'];
-    var otherField = document.getElementById('rw-industry-other-field');
-    var submitBtn = document.getElementById('rw-submit');
-    var status = document.getElementById('rw-status');
-    var previewResult = document.getElementById('rw-preview-result');
-    var confirmBox = document.getElementById('rw-confirm');
-    var fields = [firstName, email, phone, industry, other];
-
-    var MESSAGES = {
-      first_name: 'Please enter your first name.',
-      email_missing: 'Please enter your email address.',
-      email_invalid: 'Please enter a valid email address, like name@example.com.',
-      phone_missing: 'Please enter your mobile number.',
-      phone_invalid: 'Please enter a mobile number with area code, like (555) 123-4567.',
-      beauty_industry: 'Please choose your main beauty industry.',
-      beauty_industry_other: 'Please tell us what you do.'
-    };
-
-    function trim(v) { return (v || '').replace(/^\s+|\s+$/g, ''); }
-
-    // Extra rules on top of the browser's checks. They use setCustomValidity,
-    // so the browser still blocks the submit when a rule fails.
-    function applyRules(field) {
-      var v = trim(field.value);
-      var msg = '';
-      if (field === firstName && field.value !== '' && v === '') {
-        msg = MESSAGES.first_name;
-      } else if (field === email && v !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
-        msg = MESSAGES.email_invalid;
-      } else if (field === phone && v !== '') {
-        var digits = v.replace(/\D/g, '');
-        var okChars = /^[+()\d\s.\-]+$/.test(v);
-        var okLength = digits.length === 10 ||
-          (digits.length === 11 && digits.charAt(0) === '1') ||
-          (v.charAt(0) === '+' && digits.length >= 8 && digits.length <= 15);
-        if (!okChars || !okLength) { msg = MESSAGES.phone_invalid; }
-      } else if (field === other && !field.disabled && field.value !== '' && v === '') {
-        msg = MESSAGES.beauty_industry_other;
-      }
-      field.setCustomValidity(msg);
-    }
-
-    function messageFor(field) {
-      var v = field.validity;
-      if (v.valueMissing) {
-        if (field === email) { return MESSAGES.email_missing; }
-        if (field === phone) { return MESSAGES.phone_missing; }
-        return MESSAGES[field.name] || 'Please complete this field.';
-      }
-      if (v.customError) { return field.validationMessage; }
-      if (v.typeMismatch && field === email) { return MESSAGES.email_invalid; }
-      return 'Please check this field.';
-    }
-
-    function errorEl(field) {
-      return document.getElementById(field.id + '-error');
-    }
-
-    function showError(field) {
-      field.setAttribute('aria-invalid', 'true');
-      var el = errorEl(field);
-      if (el) { el.textContent = messageFor(field); }
-    }
-
-    function clearError(field) {
-      field.removeAttribute('aria-invalid');
-      var el = errorEl(field);
-      if (el) { el.textContent = ''; }
-    }
-
-    function refresh(field, showIfInvalid) {
-      applyRules(field);
-      if (field.validity.valid) {
-        clearError(field);
-      } else if (showIfInvalid || field.getAttribute('aria-invalid') === 'true') {
-        showError(field);
-      }
-    }
-
-    function syncOther() {
-      var isOther = industry.value === 'Other';
-      otherField.hidden = !isOther;
-      other.disabled = !isOther;
-      other.required = isOther;
-      if (!isOther) { other.value = ''; other.setCustomValidity(''); clearError(other); }
-    }
-
-    // Live feedback: fix errors as people type, flag problems when they leave a field.
-    for (var i = 0; i < fields.length; i++) {
-      (function (field) {
-        field.addEventListener('input', function () { refresh(field, false); });
-        field.addEventListener('change', function () { refresh(field, false); });
-        field.addEventListener('blur', function () { refresh(field, field.value !== ''); });
-      })(fields[i]);
-    }
-
-    industry.addEventListener('change', function () {
-      syncOther();
-      if (industry.value === 'Other') { other.focus(); }
-    });
-    syncOther();
-
-    // Run custom rules right before the browser validates (covers autofill too).
-    submitBtn.addEventListener('click', function () {
-      for (var j = 0; j < fields.length; j++) { applyRules(fields[j]); }
-      status.textContent = '';
-    });
-
-    // The browser fires "invalid" for each failing field and blocks the submit.
-    // We replace its default bubble with our inline messages.
-    var focusedThisRound = false;
-    form.addEventListener('invalid', function (e) {
-      var field = e.target;
-      e.preventDefault();
-      showError(field);
-      if (!focusedThisRound) {
-        focusedThisRound = true;
-        field.focus();
-        status.textContent = 'Please check the highlighted fields above.';
-        window.setTimeout(function () { focusedThisRound = false; }, 0);
-      }
-    }, true);
-
-    var sent = false;
-    form.addEventListener('submit', function (e) {
-      // Reached only when every field is valid.
-      e.preventDefault();
-      status.textContent = '';
-
-      if (mode !== 'live') {
-        previewResult.hidden = false;
-        previewResult.focus();
-        return;
-      }
-
-      if (sent) { return; }
-      sent = true;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Saving your spot…';
-
-      window.setTimeout(function () {
-        if (thankYouUrl) {
-          window.location.href = thankYouUrl;
-        } else {
-          form.hidden = true;
-          confirmBox.hidden = false;
-          confirmBox.focus();
-        }
-      }, delay);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
