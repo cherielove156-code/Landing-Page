@@ -64,11 +64,13 @@ ${component}
 writeFileSync(join(here, 'preview.html'), page);
 console.log('Wrote preview.html');
 
-// Legal pages and mentorship page -> privacy-policy.html, terms.html, mentorship.html
+// Legal, mentorship and waitlist pages -> privacy-policy.html, terms.html, mentorship.html, waitlist.html, lead-magnet-next-step.html
 for (const [src, out, title] of [
   ['legal/privacy-policy-paste-ready.html', 'privacy-policy.html', 'Privacy Policy | Rie Artistry'],
   ['legal/terms-paste-ready.html', 'terms.html', 'Terms | Rie Artistry'],
   ['mentorship/mentorship-paste-ready.html', 'mentorship.html', 'The Beauty Business Blueprint | Rie Artistry'],
+  ['waitlist/waitlist-paste-ready.html', 'waitlist.html', 'Join the Waitlist | The Beauty Business Blueprint'],
+  ['waitlist/lead-magnet-next-step-paste-ready.html', 'lead-magnet-next-step.html', 'Next Step | Rie Artistry'],
 ]) {
   const body = readFileSync(join(here, src), 'utf8').trim();
   writeFileSync(join(here, out), `<!doctype html>

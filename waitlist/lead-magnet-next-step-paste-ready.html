@@ -1,0 +1,61 @@
+<!--
+  =====================================================================
+  RIE ARTISTRY · LEAD MAGNET THANK-YOU PAGE · "NEXT STEP: JOIN THE WAITLIST"
+  Paste-ready for a HighLevel "Custom JS/HTML" element. Put it on the page
+  people see after they sign up for the lead magnet, under the download.
+
+  REPLACE: WAITLIST PAGE URL if your waitlist page lives somewhere other
+  than https://training.rieartistry.com/waitlist (search for it below).
+
+  No form or script. All CSS is scoped to #rie-next-step.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+
+<style>
+  #rie-next-step {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 56px 20px;
+    background: #F4EBE1;
+    color: #2A201B;
+    font-family: "Jost", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    overflow-wrap: break-word;
+  }
+  #rie-next-step *, #rie-next-step *::before, #rie-next-step *::after { box-sizing: border-box; }
+  #rie-next-step p, #rie-next-step h2 { margin: 0; padding: 0; }
+  #rie-next-step .ns-card { max-width: 640px; margin: 0 auto; padding: 36px 24px; background: #FFFDFA; border: 1px solid #E4D6C7; border-radius: 24px; box-shadow: 0 24px 48px -32px rgba(42, 32, 27, 0.4); }
+  #rie-next-step .ns-kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #94415A; margin-bottom: 12px; }
+  #rie-next-step .ns-h2 { font-family: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif; font-weight: 600; font-size: clamp(32px, 7vw, 42px); line-height: 1.1; letter-spacing: -0.01em; color: #2A201B; text-wrap: balance; }
+  #rie-next-step .ns-h2 em { font-style: italic; font-weight: 500; color: #AD5A6E; }
+  #rie-next-step .ns-lead { margin: 14px auto 26px; max-width: 500px; color: #5A4A42; }
+  #rie-next-step .ns-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 56px; padding: 16px 32px; border-radius: 999px;
+    background: #AD5A6E; color: #FFFFFF;
+    font-size: 17px; font-weight: 500; letter-spacing: 0.03em; text-decoration: none;
+    box-shadow: 0 10px 24px -12px rgba(150, 71, 91, 0.5);
+    transition: background-color 0.2s ease;
+  }
+  #rie-next-step .ns-btn:hover { background: #96475B; color: #FFFFFF; }
+  #rie-next-step .ns-btn:focus-visible { outline: 3px solid #AD5A6E; outline-offset: 3px; }
+  @media (min-width: 640px) { #rie-next-step .ns-card { padding: 44px 40px; } }
+  @media (prefers-reduced-motion: reduce) { #rie-next-step * { transition: none !important; } }
+</style>
+
+<div id="rie-next-step">
+  <div class="ns-card">
+    <p class="ns-kicker">Your next step</p>
+    <h2 class="ns-h2">Want help putting this <em>into action?</em></h2>
+    <p class="ns-lead">The Beauty Business Blueprint is my 8-week group mentorship for beauty professionals. Join the waitlist to be the first to know when the next round opens.</p>
+    <!-- REPLACE: WAITLIST PAGE URL -->
+    <a class="ns-btn" href="https://training.rieartistry.com/waitlist" target="_top">Join the Waitlist</a>
+  </div>
+</div>

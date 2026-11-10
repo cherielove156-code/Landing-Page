@@ -10,6 +10,7 @@ Plain HTML and CSS with a small amount of JavaScript. No libraries, no build too
 | [`highlevel-paste-ready.html`](highlevel-paste-ready.html) | Paste into a HighLevel **Custom JS/HTML** element. **Edit this file**, then run `node build.mjs`. |
 | [`legal/`](legal/) | Privacy Policy and Terms drafts, paste-ready for HighLevel. `node build.mjs` also writes `privacy-policy.html` and `terms.html`. |
 | [`mentorship/`](mentorship/) | The Beauty Business Blueprint, the 8-week group mentorship sales page (founding prices Standard $997, VIP $1,497 until Nov 6 at 11:59 PM ET), paste-ready for HighLevel. Buttons go to HighLevel payment links. `node build.mjs` writes `mentorship.html`. |
+| [`waitlist/`](waitlist/) | Waitlist page for the next round of the Blueprint (paste your GHL waitlist form into the marked spot), plus a "Join the waitlist" block for the lead magnet thank-you page. `node build.mjs` writes `waitlist.html` and `lead-magnet-next-step.html`. |
 | [`docs/SETUP-GUIDE.md`](docs/SETUP-GUIDE.md) | Placing the page, replacing placeholders, hosting options, connecting HighLevel External Tracking. |
 | [`docs/A2P-REGISTRATION.md`](docs/A2P-REGISTRATION.md) | Copy-and-paste answers for the A2P 10DLC texting registration, matched to the page wording. |
 | [`docs/LAUNCH-CHECKLIST.md`](docs/LAUNCH-CHECKLIST.md) | Contact capture, field mapping, consent values, and workflow trigger tests. |
